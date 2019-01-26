@@ -1,0 +1,50 @@
+// Place all the styles related to the toppages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*タブのスタイル*/
+.tab_item {
+width: calc(300px/2);
+height: 40px;
+background-color: #d9d9d9;
+line-height: 40px;
+font-size: 13px;
+text-align: center;
+color: #565656;
+display: block;
+float: right;
+text-align: center;
+font-weight: bold;
+transition: all 0.2s ease;
+}
+.tab_item:hover {
+opacity: 0.75;
+}
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+display: none;
+}
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+display: none;
+padding: 0 10px;
+clear: both;
+overflow: hidden;
+}
+/*選択されているタブのコンテンツのみを表示*/
+#photo:checked ~ #photo_content,
+#poem:checked ~ #poem_content {
+display: block;
+}
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+background-color: #5ab4bd;
+color: #fff;
+}
+
+@media (max-width: 768px){
+/*タブのスタイル*/
+.tab_item {
+width: calc(100%/2);
+}  
+}

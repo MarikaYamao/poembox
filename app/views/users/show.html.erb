@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="user-profile col-xs-6">
+    <div class="icon text-center">
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image %>
+      <% end %>
+    </div>
+    <div class="name text-center">
+      <h1><%= @user.name %></h1>
+    </div>
+    <% if @user.note? %>
+    <div class="user-note text-center">
+      <%= @user.note %>
+    </div>
+    <% end %>
+    <% if current_user == @user %>
+    <div class="text-center">
+          <%= link_to '編集', edit_user_path(@user), class: 'btn btn-success' %>
+    </div>
+    <% end %>
+    
+  </div>
+  <div class="tabs">
+  <input id="poem" type="radio" name="tab_item">
+  <label class="tab_item" for="poem">ポエム</label>
+  
+  <input id="photo" type="radio" name="tab_item" checked>
+  <label class="tab_item" for="photo">写真</label>
+  
+  <input id="like" type="radio" name="tab_item" checked>
+  <label class="tab_item" for="like">いいね</label>
+  
+  <div class="tab_content" id="poem_content">
+    <div class="tab_content_description">
+      <%= render 'poems/poem', poems: @poems %>
+    </div>
+  </div>
+  
+  <div class="tab_content" id="photo_content">
+    <div class="tab_content_description">
+      <%= render 'photos/photo', photos: @photos %>
+    </div>
+  </div>
+  
+  <div class="tab_content" id="like_content">
+    <div class="tab_content_description">
+      <%= render 'likes/like', likes: @likes %>
+    </div>
+  </div>
+</div>
+</div>

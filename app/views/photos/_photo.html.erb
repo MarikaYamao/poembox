@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="box-container">
+    <% @photos.each do |photo| %>
+      <div class=" show-box">
+        <%= link_to image_tag(photo.image_name), photo_path(photo), class: 'img-responsive' %>
+          <div>
+            <%= link_to photo.user.name, user_path(photo.user) %> <span class="text-muted">posted at <%= photo.created_at.strftime("%Y/%m/%d %H:%M") %></span>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>

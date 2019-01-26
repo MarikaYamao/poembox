@@ -1,0 +1,114 @@
+/* POEM */
+.poem-show-box {
+  width: 45%;
+  height: 250px;
+  margin: 20px 10px;
+  padding: 10px;
+  border: 1px solid #a3a3a3;
+  vertical-align: top;
+  display: inline-block; }
+
+.poem-responsive p {
+  color: #000;
+  height: 200px;
+  margin: 5px 20px;
+  font-size: 12px; 
+  overflow: hidden;
+}
+
+.poem-show-box a, .poem-show-box img {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%; }
+
+.poem-show-box img {
+  height: 200px;
+  width: 200px;
+  padding-bottom: 10px;
+  object-fit: cover; }
+
+@media (max-width: 992px) {
+  .poem-show-box {
+    width: 95%;
+    height: 250px; }
+
+  .poem-show-box img {
+    height: 200px;
+    width: 200px; }
+
+  .poem-show-box p {
+    margin: 5px 20px; } }
+@media (max-width: 480px) {
+  .poem-show-box {
+    width: 95%;
+    height: 370px;
+    margin: 10px; }
+
+  .poem-show-box img {
+    width: 98%;
+    max-height: 300px; }
+
+  .poem-show-box p {
+    margin: 5px 20px;
+    font-size: 12px;
+    text-align: center; }
+
+  .poem-show-box a {
+    width: 98%; }
+
+  .poem-show-box div a {
+    width: 40%; } }
+/* PHOTO SHOW */
+.poem-photo-show {
+  width: 45%;
+  height: 250px;
+  margin: 20px 10px;
+  padding: 10px;
+  border: 1px solid #a3a3a3;
+  vertical-align: top;
+  display: inline-block; }
+
+.poem-show-box a, .poem-show-box img {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%; }
+
+.poem-show-box img {
+  height: 200px;
+  width: 200px;
+  padding-bottom: 10px;
+  object-fit: cover; }
+
+@media (max-width: 992px) {
+  .poem-show-box {
+    width: 95%;
+    height: 250px; }
+
+  .poem-show-box img {
+    height: 200px;
+    width: 200px; }
+
+  .poem-show-box p {
+    margin: 5px 20px; } }
+@media (max-width: 480px) {
+  .poem-show-box {
+    width: 95%;
+    height: 370px;
+    margin: 10px; }
+
+  .poem-show-box img {
+    width: 98%;
+    max-height: 300px; }
+
+  .poem-show-box p {
+    margin: 5px 20px;
+    font-size: 12px;
+    text-align: center; }
+
+  .poem-show-box a {
+    width: 98%; }
+
+  .poem-show-box div a {
+    width: 40%; } }
+
+/*# sourceMappingURL=poems.css.map */
