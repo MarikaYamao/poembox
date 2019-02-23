@@ -5,6 +5,7 @@
         <div>
           <%= link_to @photo.user.name, user_path(@poem.user) %> 
         </div>
+        <%= render 'relationships/follow_button', user: @user %>
       </div>
       <div class="media-body">
         <div>
@@ -19,6 +20,7 @@
             <%= link_to "Delete", @poem, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
             <%= link_to "Edit", edit_poem_path(@poem.id), class: 'btn btn-success btn-xs' %>
           <% end %>
+          <%= render 'relationships/follow_button', user: @user %>
         </div>
       </div>
     </li>

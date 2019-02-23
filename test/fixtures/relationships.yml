@@ -2,14 +2,8 @@
 
 one:
   user: one
-  follow_id: 1
-  photo_id: 1
-  poem_id: 1
-  type: 
+  follow: one
 
 two:
   user: two
-  follow_id: 1
-  photo_id: 1
-  poem_id: 1
-  type: 
+  follow: two

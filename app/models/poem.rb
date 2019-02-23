@@ -3,6 +3,4 @@ class Poem < ApplicationRecord
   belongs_to :photo
   
   validates :content, presence: true, length: { maximum: 1000 }
-  
-  has_many :like
 end

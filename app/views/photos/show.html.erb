@@ -4,6 +4,7 @@
         <%= image_tag @photo.user.image, class: 'user-icon'  %>
         <div>
           <%= link_to @photo.user.name, user_path(@photo.user), class: 'user-name' %> <span class="post-date">posted at <%= @photo.created_at %></span>
+          <%= render 'relationships/follow_button', user: @photo.user %>
         </div>
       </div>
       <div class="media-body">

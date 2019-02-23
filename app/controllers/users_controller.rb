@@ -7,21 +7,7 @@ class UsersController < ApplicationController
   def show
     @photos = @user.photos.order('created_at DESC')
     @poems = @user.poems.order('created_at DESC')
-    @likeList = Array.new
-    @likes = Like.all.order('created_at ASC').each do |like|
-      case like.type
-      when 'Follow' then
-        @likeList.push(User.find(like.follow_id))
-        puts 'Follow'
-      when 'LikePhoto' then
-        @likeList.push(Photo.find(like.photo_id))
-        puts 'Follow'
-      when 'LikePoem' then
-        @likeList.push(Poem.find(like.poem_id))
-        puts 'Follow'
-      end
-    end
-    puts @likeList.inspect
+    counts(@user)
   end
   
   def edit
@@ -52,6 +38,18 @@ class UsersController < ApplicationController
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
       render :new
     end
+  end
+  
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+    counts(@user)
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page])
+    counts(@user)
   end
 
   private
