@@ -28,7 +28,7 @@ class PhotosController < ApplicationController
     @poems.destroy_all
     @photo.destroy
     flash[:success] = '画像を削除しました。'
-    render root_url
+    redirect_to root_url
   end
   
   private
@@ -37,7 +37,7 @@ class PhotosController < ApplicationController
   end
   
   def photo_params
-    params.require(:photo).permit(:image_name)
+    params.require(:photo).permit(:image_name) if params[:photo].present?
   end
   
   def correct_user

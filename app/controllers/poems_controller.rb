@@ -15,6 +15,7 @@ class PoemsController < ApplicationController
   
   def create
     @poem = current_user.poems.build(poem_params)
+    @photo = Photo.find_by(id: @poem.photo_id)
     if @poem.save
       flash[:success] = 'Poemを投稿しました。'
       redirect_to @poem

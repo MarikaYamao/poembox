@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="panel-body">
-        <%= form_for(@poem) do |f| %>
+        <%= form_with(model: @poem, local: true) do |f| %>
         
           <div class="form-group">
           <%= f.text_area :content, class: 'form-control', rows: 10 %>
