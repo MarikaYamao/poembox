@@ -67,6 +67,7 @@ gem 'bcrypt'
 #画像アップロード
 gem 'fog'
 gem "aws-sdk-s3", require: false
+gem 'active_storage_validations' #バリデーション
 
 #ページネーション
 gem 'kaminari'
@@ -80,3 +81,5 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
+
+gem 'rails-controller-testing'

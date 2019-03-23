@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_secure_password
   has_one_attached :image
   validates :note, length: { maximum: 300 }
+  validates :password, presence: true, length: { minimum: 6 }, on: :create
+  validates :password, length: { minimum: 6 }, allow_nil: true, on: :update
+  validates :image, content_type: ['image/png', 'image/jpg', 'image/jpeg'], allow_nil: true
   
   has_many :photos, dependent: :destroy
   has_many :poems, dependent: :destroy

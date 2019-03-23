@@ -15,7 +15,7 @@
     <% end %>
     <% if current_user == @user %>
     <div class="text-center">
-          <%= link_to '編集', edit_user_path(@user), class: 'btn btn-success' %>
+          <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-success' %>
     </div>
     <% end %>
     <%= render 'relationships/follow_button', user: @user %>
@@ -23,10 +23,10 @@
   </div>
   <div class="tabs">
   <input id="poem" type="radio" name="tab_item">
-  <label class="tab_item" for="poem">ポエム (<%= @count_poems %>)</label>
+  <label class="tab_item" for="poem">Poem (<%= @count_poems %>)</label>
   
   <input id="photo" type="radio" name="tab_item" checked>
-  <label class="tab_item" for="photo">写真 (<%= @count_photos %>)</label>
+  <label class="tab_item" for="photo">Image (<%= @count_photos %>)</label>
   
   <div class="tab_content" id="poem_content">
     <div class="tab_content_description">

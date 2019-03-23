@@ -2,9 +2,9 @@
   <div class="cover">
     <div class="cover-inner">
       <div class="cover-contents">
-        <h1>文字に感情を乗せて</h1>
+        <h1>Post Poem With Emotional Image</h1>
           <% unless logged_in? %>
-            <%= link_to 'POEMBOXを始める', signup_path, class: 'btn btn-success btn-lg' %>
+            <%= link_to 'Begin POEMBOX', signup_path, class: 'btn btn-success btn-lg' %>
 
   
 
@@ -15,10 +15,10 @@
 <% end %>
 <div class="tabs">
   <input id="poem" type="radio" name="tab_item">
-  <label class="tab_item" for="poem">ポエム</label>
+  <label class="tab_item" for="poem">Poem</label>
   
   <input id="photo" type="radio" name="tab_item" checked>
-  <label class="tab_item" for="photo">写真</label>
+  <label class="tab_item" for="photo">Image</label>
   
   <div class="tab_content" id="poem_content">
     <div class="tab_content_description">

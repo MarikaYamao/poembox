@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  email: MyString
+  email: mystring@example.com
   password_digest: MyString
-  image: MyString
+  image: 
   note: MyString
 
 two:
-  name: MyString
-  email: MyString
+  name: TEST
+  email: mystring@example.com
   password_digest: MyString
-  image: MyString
+  image: 
   note: MyString
