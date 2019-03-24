@@ -3,13 +3,13 @@
 one:
   name: MyString
   email: mystring@example.com
-  password_digest: MyString
+  password_digest: <%= User.digest('password') %>
   image: 
   note: MyString
 
-two:
-  name: TEST
-  email: mystring@example.com
-  password_digest: MyString
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
   image: 
   note: MyString
