@@ -7,8 +7,7 @@ class User < ApplicationRecord
   has_secure_password
   has_one_attached :image
   validates :note, length: { maximum: 300 }
-  validates :password, presence: true, length: { minimum: 6 }, on: :create
-  validates :password, length: { minimum: 6 }, allow_nil: true, on: :update
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :image, content_type: ['image/png', 'image/jpg', 'image/jpeg'], allow_nil: true
   
   has_many :photos, dependent: :destroy
@@ -18,6 +17,10 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :follow
   has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverses_of_relationship, source: :user
+
+  def thumbnail input
+    return self.image[input].variant(resize: '300x300!').processed
+  end
   
   def follow(other_user)
     unless self == other_user

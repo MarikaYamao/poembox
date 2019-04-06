@@ -65,6 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bcrypt'
 
 #画像アップロード
+gem 'mini_magick'
 gem 'fog'
 gem "aws-sdk-s3", require: false
 gem 'active_storage_validations' #バリデーション

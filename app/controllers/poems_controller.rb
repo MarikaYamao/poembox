@@ -17,10 +17,10 @@ class PoemsController < ApplicationController
     @poem = current_user.poems.build(poem_params)
     @photo = Photo.find_by(id: @poem.photo_id)
     if @poem.save
-      flash[:success] = 'Poemを投稿しました。'
+      flash[:success] = 'Posted a poem.'
       redirect_to @poem
     else
-      flash.now[:danger] = 'Poemの投稿に失敗しました。'
+      flash.now[:danger] = 'Poem failed to post.'
       render new_poem_path
     end
   end
@@ -31,20 +31,20 @@ class PoemsController < ApplicationController
   
   def update
     if @poem.update(poem_params)
-      flash[:success] = 'Poemを更新しました。'
+      flash[:success] = 'Poem has been updated.'
       redirect_to @poem
     else
-      flash.now[:danger] = 'Poemの更新に失敗しました。'
+      flash.now[:danger] = 'Failed to update the poem.'
       render :edit
     end
   end
 
   def destroy
     if @poem.destroy
-      flash[:success] = 'Poemを削除しました。'
+      flash[:success] = 'Poem has been deleted.'
       redirect_to root_url
     else
-      flash[:danger] = "Poemの削除に失敗しました。"
+      flash[:danger] = "Failed to delete the poem."
       render @poem
     end
   end
@@ -59,8 +59,9 @@ class PoemsController < ApplicationController
   end
   
   def correct_user
-    @poem = current_user.photos.find_by(id: params[:id])
+    @poem = current_user.poems.find_by(id: params[:id])
     unless @poem
+      flash[:danger] = "Can not get the specified url."
       redirect_to root_url
     end
   end

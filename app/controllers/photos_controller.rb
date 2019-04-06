@@ -15,10 +15,10 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.build(photo_params)
     if @photo.save
-      flash[:success] = '画像を投稿しました。'
+      flash[:success] = 'The photo has been posted.'
       redirect_to root_url
     else
-      flash.now[:danger] = '画像の投稿に失敗しました。'
+      flash.now[:danger] = 'Failed to post a photo.'
       render new_photo_path
     end
   end
@@ -27,7 +27,7 @@ class PhotosController < ApplicationController
     @poems = Poem.where(photo_id: @photo.id)
     @poems.destroy_all
     @photo.destroy
-    flash[:success] = '画像を削除しました。'
+    flash[:success] = 'The photo has been deleted.'
     redirect_to root_url
   end
   

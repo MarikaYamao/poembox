@@ -1,7 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.htmls
 
 # one:
-#   image_name: test.png
+#   image_name: file_path.join('images', 'sample.png')
 #   user: 1
 
 # two:

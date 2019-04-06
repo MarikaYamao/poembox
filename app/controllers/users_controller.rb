@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
   
   def index
   end
@@ -15,10 +17,10 @@ class UsersController < ApplicationController
   
   def update
     if @user.update(user_params)
-      flash[:success] = '正常に更新されました'
+      flash[:success] = 'Has been updated.'
       redirect_to @user
     else
-      flash.now[:danger] = '更新されませんでした'
+      flash.now[:danger] = 'Update failed.'
       render :edit
     end
   end
@@ -32,10 +34,10 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in(@user)
-      flash[:success] = 'ユーザを登録しました。'
+      flash[:success] = 'User registration successful.'
       redirect_to @user
     else
-      flash.now[:danger] = 'ユーザの登録に失敗しました。'
+      flash.now[:danger] = 'Failed to register user.'
       render :new
     end
   end
@@ -58,8 +60,22 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end
+
+  def correct_user
+    unless current_user?(@user)
+      flash[:danger] = "Can not get the specified url."
+      redirect_to(root_url)
+    end
+  end
+  
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :note)
   end
-  
 end
