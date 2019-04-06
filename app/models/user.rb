@@ -6,7 +6,7 @@ class User < ApplicationRecord
                   uniqueness: { case_sensitive: false }
   has_secure_password
   has_one_attached :image
-  validates :note, length: { maximum: 300 }
+  validates :note, length: { maximum: 255 }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :image, content_type: ['image/png', 'image/jpg', 'image/jpeg'], allow_nil: true
   

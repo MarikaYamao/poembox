@@ -16,9 +16,15 @@ class PhotosController < ApplicationController
     @photo = current_user.photos.build(photo_params)
     if @photo.save
       flash[:success] = 'The photo has been posted.'
-      redirect_to root_url
+      redirect_to @photo
     else
-      flash.now[:danger] = 'Failed to post a photo.'
+      if @photo.errors.any?
+        @photo.errors.full_messages.each do |msg|
+          flash.now[:danger] = msg
+        end
+      else
+        flash.now[:danger] = 'Failed to post a photo.'
+      end
       render new_photo_path
     end
   end

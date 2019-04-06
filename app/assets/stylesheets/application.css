@@ -83,7 +83,6 @@ footer {
 }
 
 .show-box span,.poem-show-box span{
-  font-size: 8px;
   vertical-align: middle;
   float: right;
 }
@@ -111,6 +110,14 @@ footer {
   text-align: center;
 }
 
+.show-box .text-muted a{
+  width: auto;
+}
+
+.text-muted, .post-date {
+  font-size: 8px;
+}
+
 @media (max-width: 768px){
   .show-box{
     width: 95%;
@@ -123,7 +130,6 @@ footer {
     width: 260px;
   }
 }
-
 
 .introduction{
   margin: 20px 10px;

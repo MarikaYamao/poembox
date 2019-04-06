@@ -13,9 +13,9 @@ class Photo < ApplicationRecord
 
   def validate_image
     if !image_name.attached?
-      errors.add(:image_name, 'Please select an image.')
+      errors[:base] << 'Please select an image.'
     elsif !image_name.content_type.in?(%("image/jpg image/jpeg image/png"))
-      errors.add(:image_name, 'Please post in JPEG or PNG.')
+      errors[:base] << 'Please post in JPEG or PNG.'
     end
   end
 end

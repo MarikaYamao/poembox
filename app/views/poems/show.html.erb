@@ -3,16 +3,15 @@
       <div class="media-left">
         <%= image_tag @photo.user.image, class:'user-icon'  %>
         <div>
-          <%= link_to @photo.user.name, user_path(@poem.user) %> 
+          <%= link_to @photo.user.name, user_path(@poem.user), class: 'user-name' %> 
+          <span class="post-date">posted at <%= @poem.created_at.strftime("%Y/%m/%d %H:%M") %></span>
         </div>
-        <%= render 'relationships/follow_button', user: @photo.user %>
       </div>
       <div class="media-body">
         <div>
           <%= image_tag @photo.image_name , class:'img-responsive' %>
         </div>
-        <span class="text-muted">posted at <%= @poem.created_at.strftime("%Y/%m/%d %H:%M") %></span>
-        <div>
+        <div class="poem-container">
           <%= simple_format(h(@poem.content)) %>
         </div>
         <div>
@@ -20,7 +19,6 @@
             <%= link_to "Delete", @poem, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
             <%= link_to "Edit", edit_poem_path(@poem.id), class: 'btn btn-success btn-xs' %>
           <% end %>
-          <%= render 'relationships/follow_button', user: @poem.user %>
         </div>
       </div>
     </li>

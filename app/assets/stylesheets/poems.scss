@@ -10,7 +10,6 @@
 
 .poem-responsive p {
   color: #000;
-  height: 200px;
   margin: 5px 20px;
   font-size: 12px; 
   overflow: hidden;
@@ -68,16 +67,22 @@
   vertical-align: top;
   display: inline-block; }
 
-.poem-show-box a, .poem-show-box img {
+.poem-show-box .poem-responsive, .poem-show-box img {
   display: inline-block;
   vertical-align: top;
-  width: 49%; }
+  width: calc(100% - 210px); 
+  height: 200px;
+  overflow: hidden;}
 
 .poem-show-box img {
   height: 200px;
   width: 200px;
   padding-bottom: 10px;
   object-fit: cover; }
+
+.poem-show-box .text-muted a, .poem-photo-show .text-muted a{
+  width: auto;
+}
 
 @media (max-width: 992px) {
   .poem-show-box {
@@ -110,5 +115,10 @@
 
   .poem-show-box div a {
     width: 40%; } }
+
+.poem-container {
+  margin: 20px 0;
+  line-height: 1.7;
+}
 
 /*# sourceMappingURL=poems.css.map */

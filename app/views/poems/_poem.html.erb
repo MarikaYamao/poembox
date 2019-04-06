@@ -5,7 +5,7 @@
         <%= image_tag poem.photo.image_name, class: 'img-responsive' %>
         <%= link_to simple_format(h(poem.content.truncate(170))), poem_path(poem), class: 'poem-responsive' %>
           <div>
-            <%= link_to poem.user.name, user_path(poem.user) %> <span class="text-muted">posted at <%= poem.created_at.strftime("%Y/%m/%d %H:%M") %></span>
+            <span class="text-muted">posted at <%= poem.created_at.strftime("%Y/%m/%d %H:%M") %> by <%= link_to poem.user.name, user_path(poem.user) %></span>
           </div>
       </div>
     <% end %>
