@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   
   resources :photos, only: [:create, :destroy, :show, :new]
   resources :poems, only: [:create, :destroy, :show, :new, :edit, :update]
-  resources :relationships, only: [:create, :destroy]
+  #resources :relationships, only: [:create, :destroy]
 end
