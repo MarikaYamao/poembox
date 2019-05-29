@@ -1,9 +1,11 @@
 <ul class="media-list">
     <li class="media">
       <div class="media-left">
-        <%= image_tag @photo.user.image, class:'user-icon'  %>
+        <% if @poem.user.image.attached? %>
+          <%= image_tag @poem.user.image, class: 'user-icon' %>
+        <% end %>
         <div>
-          <%= link_to @photo.user.name, user_path(@poem.user), class: 'user-name' %> 
+          <%= link_to @poem.user.name, user_path(@poem.user), class: 'user-name' %> 
           <span class="post-date">posted at <%= @poem.created_at.strftime("%Y/%m/%d %H:%M") %></span>
         </div>
       </div>
