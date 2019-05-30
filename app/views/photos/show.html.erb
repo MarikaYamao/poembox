@@ -3,6 +3,8 @@
       <div class="media-left">
         <% if @photo.user.image.attached? %>
           <%= image_tag @photo.user.image, class: 'user-icon' %>
+        <% else %>
+          <%= image_tag '/user_default.png', class: 'user-icon' %>
         <% end %>
         <div>
           <%= link_to @photo.user.name, user_path(@photo.user), class: 'user-name' %>
