@@ -33,18 +33,6 @@ ActiveRecord::Schema.define(version: 2019_04_14_032008) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.integer "follow_id"
-    t.integer "photo_id"
-    t.integer "poem_id"
-    t.string "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["type"], name: "index_likes_on_type"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -82,7 +70,6 @@ ActiveRecord::Schema.define(version: 2019_04_14_032008) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "likes", "users"
   add_foreign_key "photos", "users"
   add_foreign_key "poems", "photos"
   add_foreign_key "poems", "users"

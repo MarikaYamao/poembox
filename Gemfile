@@ -66,7 +66,7 @@ gem 'bcrypt'
 
 #画像アップロード
 gem 'mini_magick'
-gem 'fog'
+gem 'fog-aws'
 gem "aws-sdk-s3", require: false
 gem 'active_storage_validations' #バリデーション
 
