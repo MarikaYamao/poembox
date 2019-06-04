@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_back_or controller: 'users', action: 'show', id: @user.id, user_name: @user.name
     else
       flash.now[:danger] = 'Failed to login.'
-      render :error
+      render :new
     end
   end
 
