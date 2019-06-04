@@ -1,0 +1,30 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="panel panel-default">
+      <div class="panel-heading">Post Image</div>
+      <div class="panel-body">
+        <%= form_with(model: @photo, remote: true) do |f| %>
+          <%= render 'layouts/flash_messages' %>
+          <div class="form-group">
+            <%= f.label :image_name, 'Select', class: 'btn btn-secondary' %>
+            <%= f.submit 'Post', class: 'btn btn-success hidden', id: 'post-photo' %>
+            <%= f.file_field :image_name %>
+            <img id="photo-preview">
+            <% #<input type="hidden" value="" name="photo[image_name]" id="photo_image_name"> %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('photo_image_name').addEventListener('change', function (e) {
+    var file = e.target.files[0];
+    var blobUrl = window.URL.createObjectURL(file);
+    var img = document.getElementById('photo-preview');
+    img.src = blobUrl;
+    var post = document.getElementById('post-photo');
+    post.classList.remove('hidden');
+});
+</script>

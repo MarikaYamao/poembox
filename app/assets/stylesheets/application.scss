@@ -1,0 +1,186 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@charset "utf-8";
+@import "bootstrap";
+
+/* body */
+body {
+  background: #fff;
+  font-size: 14px;
+  line-height: 1;
+}
+
+footer {
+  margin-top: 40px;
+  width: 14%;
+  display: inline-block;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ボタン類 */
+
+.btn {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 14px;
+  line-height: 1.3em;
+}
+
+.btn-success {
+  background: none;
+  color: #5ab4bd;
+  border-color: #5ab4bd;
+}
+
+.btn-success:hover {
+  background-color: #5ab4bd;
+  color: #fff;
+  border-color: #5ab4bd;
+}
+
+.btn-danger {
+  background: none;
+  color: #d9534f;
+  border-color: #d9534f;
+}
+
+.btn-secondary {
+  background: none;
+  color: #777;
+  border-color: #777;
+}
+
+/* navbar */
+.navbar {
+  background-color: #fff;
+}
+
+.navbar > .container, .navbar > .container-fluid {
+  display: inline-block;
+}
+
+.navbar-header img {
+  margin-top: 5px;
+  height: 40px;
+}
+
+.navbar-left {
+  padding: 15px 5px;
+  display: block;
+  color: #000;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  flex-direction: unset;
+  
+  .dropdown-menu {
+    position: absolute; 
+    font-size: 14px;
+  }
+}
+
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* cover */
+.cover {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 300px;
+  background: url("/cover-bg.jpg") center center no-repeat;
+  background-size: cover;
+  
+  .cover-inner {
+    height: 100%;
+    margin: auto;
+    display: table;
+    
+    .cover-contents {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      position: relative;
+      
+      h1 {
+        margin: 0 0 20px 0;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 0.15em;
+      }
+      
+      .btn-success {
+        background-color: #5ab4bd;
+        color: #fff;
+        border-color: #5ab4bd;
+        border-radius: 5px;
+        padding: 10px 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .cover .cover-inner .cover-contents h1{
+    font-size: 25px;
+  }
+}
+
+.panel {
+  margin: 0;
+}
+
+.show-box span,.poem-show-box span{
+  vertical-align: middle;
+  float: right;
+}
+
+.introduction{
+  margin: 20px 10px;
+  padding: 10px;
+  border: 1px solid #a3a3a3;
+}
+
+/*  modal   */
+
+.fade {
+  opacity: inherit;
+}
+
+#photo_image_name {
+  display: none;
+}
+
+#photo-preview {
+  width: 100%;
+  margin: 10px 0;
+}
+
+#image-preview{
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+}

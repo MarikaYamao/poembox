@@ -1,9 +1,10 @@
-<div class="row">
-  <div class="col-xs-offset-3 col-xs-6">
+<div class="modal-dialog">
+  <div class="modal-content">
     <div class="panel panel-default">
       <div class="panel-heading">Login</div>
       <div class="panel-body">
-        <%= form_for(:session, url: login_path) do |f| %>
+        <%= form_with(url: login_path, remote: true) do |f| %>
+          <%= render 'layouts/flash_messages' %>
           <div class="form-group">
             <%= f.label :email, 'Email' %>
             <%= f.email_field :email, class: 'form-control' %>
@@ -13,10 +14,10 @@
             <%= f.label :password, 'Password' %>
             <%= f.password_field :password, class: 'form-control' %>
           </div>
-
-          <%= f.submit 'Login', class: 'btn btn-primary btn-block' %>
+          <div class="text-right">
+            <%= f.submit 'Login', class: 'btn btn-success' %>
+          </div>
         <% end %>
-        <%= link_to 'Sign Up', signup_path %>
       </div>
     </div>
   </div>

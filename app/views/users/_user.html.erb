@@ -1,0 +1,20 @@
+<div class="icon">
+  <% if user.image.attached? %>
+    <%= image_tag user.image %>
+  <% else %>
+    <%= image_tag '/user_default.png' %>
+  <% end %>
+</div>
+<div class="name">
+  <h2>
+    <%= user.name %>
+  </h2>  
+</div>
+<% if user.note? %>
+  <div class="user-note text-center">
+    <%= user.note %>
+  </div>
+<% end %>
+<% if current_user == user %>
+  <%= link_to 'Edit', { controller: "users", action: "edit", id: user.id, user_name: user.name } , class: 'btn btn-success btn-xs', remote: true %>
+<% end %>

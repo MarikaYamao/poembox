@@ -1,9 +1,9 @@
-<div class="row">
-  <div class="col-xs-offset-2 col-xs-8">
+<div class="modal-dialog">
+  <div class="modal-content">
     <div class="panel panel-default">
       <div class="panel-heading"><%= @user.name %></div>
       <div class="panel-body">
-        <%= form_with(model: @user, local: true) do |f| %>
+        <%= form_with(model: @user, remote: true, class: 'user-form') do |f| %>
         <%= render 'layouts/error_messages' %>
           <div class="form-group">
             <%= f.label :name, 'Name' %>
@@ -27,12 +27,19 @@
           </div>
           
           <div class="form-group">
+            <%= f.label :note, 'Note' %>
             <%= f.text_area :note, class: 'form-control', rows: 5 %>
           </div>
           
           <div class="form-group">
-            <%= f.label :image, 'Image' %>
-            <%= f.file_field :image %>
+            <%= f.label :image, 'Select Image', class: 'btn btn-secondary' %>
+            <%= f.file_field :image, class: 'hidden' %>
+            
+            <% if @user.image.attached? %>
+              <%= image_tag @user.image, id: 'image-preview' %>
+            <% else %>
+              <img id="image-preview">
+            <% end %>
           </div>
 
           <div class="text-right">
@@ -43,3 +50,12 @@
     </div>
   </div>
 </div>
+
+<script>
+document.getElementById('user_image').addEventListener('change', function (e) {
+    var file = e.target.files[0];
+    var blobUrl = window.URL.createObjectURL(file);
+    var img = document.getElementById('image-preview');
+    img.src = blobUrl;
+});
+</script>

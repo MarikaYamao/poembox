@@ -3,14 +3,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    email = params[:session][:email].downcase
-    password = params[:session][:password]
+    email = params[:email].downcase
+    password = params[:password]
     if login(email, password)
       flash[:success] = 'Login succeeded.'
-      redirect_back_or @user
+      redirect_back_or controller: 'users', action: 'show', id: @user.id, user_name: @user.name
     else
       flash.now[:danger] = 'Failed to login.'
-      render 'new'
+      render :error
     end
   end
 

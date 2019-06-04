@@ -1,20 +1,20 @@
-<div class="row">
-  <div class="col-xs-offset-3 col-xs-6">
+<div class="modal-dialog">
+  <div class="modal-content">
     <div class="panel panel-default">
-      <div class="panel-heading">Edit Poem</div>
+      <div class="panel-heading">Post Poem</div>
       <div class="media-body">
         <div>
           <p><%= image_tag @photo.image_name , class:'img-responsive' %></p>
         </div>
       </div>
       <div class="panel-body">
-        <%= form_with(model: @poem, local: true) do |f| %>
-        
+        <%= form_with(model: @poem, remote: true, class:'poem-form') do |f| %>
+          <%= render 'layouts/flash_messages' %>
           <div class="form-group">
           <%= f.text_area :content, class: 'form-control', rows: 10 %>
         </div>
           <%= f.hidden_field :photo_id, value: @photo.id %>
-          <%= f.submit 'Edit', class: 'btn btn-primary btn-block' %>
+          <%= f.submit 'Post', class: 'btn btn-success' %>
         <% end %>
       </div>
     </div>

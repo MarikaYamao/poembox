@@ -74,8 +74,8 @@ gem 'active_storage_validations' #バリデーション
 gem 'kaminari'
 
 #CSS補助
-gem 'bootstrap-sass'
-gem 'bootstrap_form'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.1.3'
 
 #エラー画面
 group :development do

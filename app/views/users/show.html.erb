@@ -1,34 +1,13 @@
-<div class="row">
-  <div class="user-profile col-xs-6">
-    <div class="icon text-center">
-      <% if @user.image.attached? %>
-        <%= image_tag @user.image %>
-      <% else %>
-        <%= image_tag '/user_default.png' %>
-      <% end %>
-    </div>
-    <div class="name text-center">
-      <h2>
-        <%= @user.name %>
-        <% if current_user == @user %>
-            <%= link_to 'Edit', edit_user_path(@user), class: 'btn' %>
-        <% end %>
-      </h2>  
-    </div>
-    <% if @user.note? %>
-    <div class="user-note text-center">
-      <%= @user.note %>
-    </div>
-    <% end %>
-  
-    
-  </div>
-  <div class="tabs">
+<div class="user" >
+  <%= render @user %>
+</div>
+
+<div class="contents">
   <input id="poem" type="radio" name="tab_item">
-  <label class="tab_item" for="poem">Poem (<%= @count_poems %>)</label>
+  <label class="tab_item" for="poem">Poem</label>
   
   <input id="photo" type="radio" name="tab_item" checked>
-  <label class="tab_item" for="photo">Image (<%= @count_photos %>)</label>
+  <label class="tab_item" for="photo">Photo</label>
   
   <div class="tab_content" id="poem_content">
     <div class="tab_content_description">
@@ -41,7 +20,4 @@
       <%= render 'photos/photo', photos: @photos %>
     </div>
   </div>
-  
-
-</div>
 </div>

@@ -2,10 +2,10 @@
   <div class="box-container">
     <% @poems.each do |poem| %>
       <div class="poem-photo-show">
-        <%= link_to simple_format(h(poem.content.truncate(170))), poem_path(poem), class: 'poem-responsive' %>
-          <div>
-            <span class="text-muted">posted at <%= poem.created_at.strftime("%Y/%m/%d %H:%M") %> by <%= link_to poem.user.name, user_path(poem.user) %></span>
-          </div>
+        <%= link_to poem_path(poem), class: 'poem-responsive' do%>
+          <div><%= simple_format(h(poem.content.truncate(300))) %></div>
+        <% end %>
+        <span class="text-muted">posted at <%= poem.created_at.strftime("%Y/%m/%d %H:%M") %> by <%= link_to poem.user.name, user_path(poem.user) %></span>
       </div>
     <% end %>
   </div>
