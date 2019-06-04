@@ -1,8 +1,9 @@
 p .img-responsive, p .img-responsive img {
-    max-height: 400px;
-    margin: 0 auto;
-    padding: 5px;
-    text-align: center;
+  width: 100%;
+  max-height: 400px;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
 }
 
 p .img-responsive img:hover{
@@ -59,3 +60,9 @@ p .img-responsive img:hover{
   }
 }
 
+@media (max-width: 480px) {
+  /* スマホ */
+  .show-box img{
+    width: 100%;
+  }
+}

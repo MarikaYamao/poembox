@@ -11,10 +11,13 @@
         <%= form_with(model: @poem, remote: true, class:'poem-form') do |f| %>
           <%= render 'layouts/flash_messages' %>
           <div class="form-group">
-          <%= f.text_area :content, class: 'form-control', rows: 10 %>
-        </div>
-          <%= f.hidden_field :photo_id, value: @photo.id %>
-          <%= f.submit 'Post', class: 'btn btn-success' %>
+            <%= f.text_area :content, class: 'form-control', rows: 10 %>
+          </div>
+            <%= f.hidden_field :photo_id, value: @photo.id %>
+          <div class="text-right">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <%= f.submit 'Post', class: 'btn btn-success' %>
+          </div>
         <% end %>
       </div>
     </div>

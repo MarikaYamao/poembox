@@ -70,6 +70,13 @@ footer {
   border-color: #777;
 }
 
+@media (max-width: 480px) {
+  /* スマホ */
+  .btn {
+    font-size: 12px;
+  }
+}
+
 /* navbar */
 .navbar {
   background-color: #fff;
@@ -103,6 +110,30 @@ footer {
 .navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+  /* スマホ */
+  .navbar {
+    margin-bottom: 10px;
+  }
+  
+  .navbar-toggle {
+    padding: 8px 7px;
+    margin: 5px;
+    margin-right: 20px;
+    
+    .icon-bar {
+      width: 18px;
+      height: 1px;
+    }
+  }
+  .navbar-left {
+    display: inline-block;
+    padding-top: 13px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
 }
 
 /* cover */

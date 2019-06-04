@@ -10,6 +10,13 @@
   font-size: 0;
 }
 
+@media (max-width: 480px) {
+  /* スマホ */
+  .contents {
+    width: 100%;
+  }
+}
+
 /*タブのスタイル*/
 .tab_item {
 display: inline-block;
@@ -60,4 +67,15 @@ width: calc(100%/2);
 
 .text-muted, .post-date {
   font-size: 8px;
+}
+
+@media (max-width: 480px) {
+  /* スマホ */
+  .row {
+    width: calc(100% + 2rem);
+    
+    .box-container {
+      width: 100%;
+    }
+  }
 }
