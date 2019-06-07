@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     password = params[:password]
     if login(email, password)
       flash[:success] = 'Login succeeded.'
-      redirect_back_or controller: 'users', action: 'show', id: @user.id, user_name: @user.name
+      redirect_back(fallback_location: root_path)
     else
       flash.now[:danger] = 'Failed to login.'
       render :new

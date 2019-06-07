@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   resources :photos, only: [:create, :destroy, :show, :new]
   resources :poems, only: [:create, :destroy, :show, :new, :edit, :update]
-  #resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -14,10 +14,12 @@ Rails.application.routes.draw do
   post 'signup', to: 'users#create'
   get '/:id/:user_name' => 'users#show'
   get '/:id/:user_name/edit' => 'users#edit'
-  resources :users, only: [:new, :create, :update] do
+  resources :users do
     member do
-      get :followings
-      get :followers
+      get :follow
+    end
+    collection do
+      get :search
     end
   end
   

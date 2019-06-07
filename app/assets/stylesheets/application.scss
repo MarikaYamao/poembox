@@ -70,6 +70,18 @@ footer {
   border-color: #777;
 }
 
+.btn-primary {
+  background: none;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
 @media (max-width: 480px) {
   /* スマホ */
   .btn {

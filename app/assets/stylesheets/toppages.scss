@@ -49,7 +49,9 @@ overflow: hidden;
 }
 /*選択されているタブのコンテンツのみを表示*/
 #photo:checked ~ #photo_content,
-#poem:checked ~ #poem_content {
+#poem:checked ~ #poem_content,
+#followers:checked ~ #followers_content,
+#followings:checked ~ #followings_content{
 display: block;
 }
 /*選択されているタブのスタイルを変える*/
@@ -58,15 +60,19 @@ background-color: #5ab4bd;
 color: #fff;
 }
 
-@media (max-width: 768px){
-/*タブのスタイル*/
-.tab_item {
-width: calc(100%/2);
-}  
-}
-
 .text-muted, .post-date {
   font-size: 8px;
+}
+
+@media (max-width: 768px){
+  /*タブのスタイル*/
+  .tab_item {
+  width: calc(100%/2);
+  }
+  
+  .contents {
+    width: 79%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -77,5 +83,9 @@ width: calc(100%/2);
     .box-container {
       width: 100%;
     }
+  }
+  
+  .contents {
+    width: 100%;
   }
 }

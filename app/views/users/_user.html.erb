@@ -11,10 +11,26 @@
   </h2>  
 </div>
 <% if user.note? %>
-  <div class="user-note text-center">
-    <%= user.note %>
+  <div class="user-note">
+    <%= simple_format(h(user.note)) %>
   </div>
+<% else %>
+  <div></div>
 <% end %>
 <% if current_user == user %>
   <%= link_to 'Edit', { controller: "users", action: "edit", id: user.id, user_name: user.name } , class: 'btn btn-success btn-xs', remote: true %>
+<% else %>
+  <% unless current_user == user || !logged_in? %>
+    <div class="follow-form" id='follow-form-<%= user.id %>'>
+      <% if current_user.following?(user) %>
+        <%= render 'relationships/unfollow', user: user %>
+      <% else %>
+        <%= render 'relationships/follow', user: user %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
+<div class="follow">
+  <%= link_to "followings #{user.followings.count}", follow_user_path(user) %>
+  <%= link_to "followers #{user.followers.count}", follow_user_path(user) %>
+</div>
