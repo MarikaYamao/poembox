@@ -1,34 +1,57 @@
-<% content_for :cover do %>
-  <div class="cover">
-    <div class="cover-inner">
-      <div class="cover-contents">
-        <h1>Post Poem With Emotional Image</h1>
-          <% unless logged_in? %>
-            <%= link_to 'Begin POEMBOX', signup_path, class: 'btn btn-success btn-lg' %>
-
+<% if logged_in? %>
   
+  <div class="user" >
+    <%= render current_user %>
+  </div>
 
-          <% end %>
+  <div class="contents">
+    <input id="poem" type="radio" name="tab_item">
+    <label class="tab_item" for="poem">Poem</label>
+    
+    <input id="photo" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="photo">Photo</label>
+    
+    <div class="tab_content" id="poem_content">
+      <div class="tab_content_description">
+        <%= render 'poems/poem', poems: @poems %>
+      </div>
+    </div>
+    
+    <div class="tab_content" id="photo_content">
+      <div class="tab_content_description">
+        <%= render 'photos/photo', photos: @photos %>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+  <% content_for :cover do %>
+    <div class="cover">
+      <div class="cover-inner">
+        <div class="cover-contents">
+          <h1>Post Poem With Emotional Image</h1>
+              <%= link_to 'Begin POEMBOX', signup_path, class: 'btn btn-success btn-lg', remote: true %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="contents">
+    <input id="poem" type="radio" name="tab_item">
+    <label class="tab_item" for="poem">Poem</label>
+    
+    <input id="photo" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="photo">Photo</label>
+    
+    <div class="tab_content" id="poem_content">
+      <div class="tab_content_description">
+        <%= render 'poems/poem', poems: @poems %>
+      </div>
+    </div>
+    
+    <div class="tab_content" id="photo_content">
+      <div class="tab_content_description">
+        <%= render 'photos/photo', photos: @photos %>
       </div>
     </div>
   </div>
 <% end %>
-<div class="tabs">
-  <input id="poem" type="radio" name="tab_item">
-  <label class="tab_item" for="poem">Poem</label>
-  
-  <input id="photo" type="radio" name="tab_item" checked>
-  <label class="tab_item" for="photo">Image</label>
-  
-  <div class="tab_content" id="poem_content">
-    <div class="tab_content_description">
-      <%= render 'poems/poem', poems: @poems %>
-    </div>
-  </div>
-  
-  <div class="tab_content" id="photo_content">
-    <div class="tab_content_description">
-      <%= render 'photos/photo', photos: @photos %>
-    </div>
-  </div>
-</div>

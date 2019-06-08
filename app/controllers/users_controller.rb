@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:success] = 'Has been updated.'
-      redirect_to @user
+      redirect_to controller: 'users', action: 'show', id: @user.id, user_name: @user.name
     else
       flash.now[:danger] = 'Update failed.'
       render :edit
@@ -35,23 +35,18 @@ class UsersController < ApplicationController
     if @user.save
       log_in(@user)
       flash[:success] = 'User registration successful.'
-      redirect_to @user
+      redirect_to controller: 'users', action: 'show', id: @user.id, user_name: @user.name
     else
       flash.now[:danger] = 'Failed to register user.'
       render :new
     end
   end
   
-  def followings
+  def follow
     @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
-    counts(@user)
-  end
-  
-  def followers
-    @user = User.find(params[:id])
     @followers = @user.followers.page(params[:page])
-    counts(@user)
+    render 'show_follow'
   end
 
   private

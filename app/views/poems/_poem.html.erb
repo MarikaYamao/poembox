@@ -1,12 +1,17 @@
 <div class="row">
   <div class="box-container">
     <% @poems.each do |poem| %>
-      <div class=" poem-show-box">
-        <%= image_tag poem.photo.image_name, class: 'img-responsive' %>
-        <%= link_to simple_format(h(poem.content.truncate(170))), poem_path(poem), class: 'poem-responsive' %>
-          <div>
-            <span class="text-muted">posted at <%= poem.created_at.strftime("%Y/%m/%d %H:%M") %> by <%= link_to poem.user.name, user_path(poem.user) %></span>
+      <div class="poem-show-box">
+        <%= link_to poem_path(poem) do %>
+          <%= image_tag poem.photo.image_name, class: 'img-responsive' %>
+          <div class="poem-responsive" >
+            <%= simple_format(h(poem.content.truncate(170))) %>
           </div>
+        <% end %>
+        <div>
+          <span class="text-muted">posted at <%= poem.created_at.strftime("%Y/%m/%d %H:%M") %> by 
+          <%= link_to poem.user.name, controller: "users", action: "show", id: poem.user.id, user_name: poem.user.name %></span>
+        </div>
       </div>
     <% end %>
   </div>

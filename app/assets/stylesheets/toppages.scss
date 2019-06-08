@@ -2,19 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.contents {
+  display: inline-block;
+  width: 85%;
+  vertical-align: top;
+  padding: 0 10px;
+  font-size: 0;
+}
+
+@media (max-width: 480px) {
+  /* スマホ */
+  .contents {
+    width: 100%;
+  }
+}
+
 /*タブのスタイル*/
 .tab_item {
-width: calc(300px/2);
-height: 40px;
-background-color: #d9d9d9;
-line-height: 40px;
+display: inline-block;
+width: calc(200px/2);
+height: 30px;
+line-height: 15px;
+padding: 0.5em 1em;
+text-decoration: none;
+background: #f7f7f7;
+color: #5ab4bd;
+font-weight: bold;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 font-size: 13px;
 text-align: center;
-color: #565656;
-display: block;
-float: right;
-text-align: center;
-font-weight: bold;
 transition: all 0.2s ease;
 }
 .tab_item:hover {
@@ -33,18 +49,43 @@ overflow: hidden;
 }
 /*選択されているタブのコンテンツのみを表示*/
 #photo:checked ~ #photo_content,
-#poem:checked ~ #poem_content {
+#poem:checked ~ #poem_content,
+#followers:checked ~ #followers_content,
+#followings:checked ~ #followings_content{
 display: block;
 }
 /*選択されているタブのスタイルを変える*/
-.tabs input:checked + .tab_item {
+.contents input:checked + .tab_item {
 background-color: #5ab4bd;
 color: #fff;
 }
 
+.text-muted, .post-date {
+  font-size: 8px;
+}
+
 @media (max-width: 768px){
-/*タブのスタイル*/
-.tab_item {
-width: calc(100%/2);
-}  
+  /*タブのスタイル*/
+  .tab_item {
+  width: calc(100%/2);
+  }
+  
+  .contents {
+    width: 79%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* スマホ */
+  .row {
+    width: calc(100% + 2rem);
+    
+    .box-container {
+      width: 100%;
+    }
+  }
+  
+  .contents {
+    width: 100%;
+  }
 }

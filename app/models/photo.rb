@@ -7,10 +7,6 @@ class Photo < ApplicationRecord
   
   has_many :poems, dependent: :destroy
 
-  def thumbnail input
-    return self.image_name[input].variant(resize: '500x500!').processed
-  end
-
   def validate_image
     if !image_name.attached?
       errors[:base] << 'Please select an image.'

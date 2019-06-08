@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="box-container">
+    <% users.each do |user| %>
+      <div class="follow-show-box">
+        <%= link_to controller: "users", action: "show", id: user.id, user_name: user.name do %>
+          <% if user.image.attached? %>
+            <%= image_tag user.image, class: 'img-responsive' %>
+          <% else %>
+            <%= image_tag '/user_default.png', class: 'img-responsive' %>
+          <% end %>
+          <p class="name"><%= user.name %></p>
+          <p class="note"><%= user.note %></p>
+        <% end %>
+        <% unless current_user == user || !logged_in? %>
+          <div class="follow-form" id='follow-form-<%= user.id %>'>
+            <% if current_user.following?(user) %>
+              <%= render 'relationships/unfollow', user: user %>
+            <% else %>
+              <%= render 'relationships/follow', user: user %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

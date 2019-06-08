@@ -25,13 +25,11 @@ class PhotosController < ApplicationController
       else
         flash.now[:danger] = 'Failed to post a photo.'
       end
-      render new_photo_path
+      render :new
     end
   end
 
   def destroy
-    @poems = Poem.where(photo_id: @photo.id)
-    @poems.destroy_all
     @photo.destroy
     flash[:success] = 'The photo has been deleted.'
     redirect_to root_url
