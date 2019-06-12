@@ -14,6 +14,9 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
               <li>
+                <%= link_to 'All Posts', all_path %>
+              </li>
+              <li>
                 <%= link_to 'Post Image', new_photo_path, remote: true %>
               </li>
   

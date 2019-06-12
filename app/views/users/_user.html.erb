@@ -31,6 +31,6 @@
   <% end %>
 <% end %>
 <div class="follow">
-  <%= link_to "followings #{user.followings.count}", follow_user_path(user) %>
-  <%= link_to "followers #{user.followers.count}", follow_user_path(user) %>
+  <%= link_to "followings #{user.followings.count}", follow_user_path(user, followings: '') %>
+  <%= link_to "followers #{user.followers.count}", follow_user_path(user, followers: '') %>
 </div>

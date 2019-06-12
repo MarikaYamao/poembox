@@ -227,3 +227,63 @@ footer {
   max-height: 200px;
   object-fit: cover;
 }
+
+.pagination {
+  width: fit-content;
+  margin: 0 auto;
+    
+  .page {
+    font-size: 12px;
+    padding: 10px;
+    width: 30px;
+    color: #777;
+    margin: 5px;
+    text-align: center;
+    vertical-align: middle;
+    
+    a {
+      color: #777;
+    }
+  }
+  
+  .current {
+    background-color: rgba(198, 198, 198, 0.3);
+    border-radius: 20px;
+  }
+  
+  .first, .prev, .next, .last {
+    font-size: 12px;
+    padding: 10px 0;
+    width: 40px;
+    color: #777;
+    margin: 5px;
+    text-align: center;
+    vertical-align: middle;
+    
+    a {
+      color: #777;
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  /* スマホ */
+  .pagination {
+    .page {
+      width: auto;
+      padding: 10px 5px;
+      margin: 5px 0;
+    }
+    
+    .current {
+      padding: 10px;
+    }
+    
+    .first, .prev, .next, .last {
+      width: auto;
+      padding: 10px 5px;
+      margin: 5px 0;
+    }
+  }
+}

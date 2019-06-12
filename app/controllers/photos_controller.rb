@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   
   def show
     @photos = Photo.find_by(id: params[:user_id])
-    @poems = Poem.where(photo_id: params[:id])
+    @poems = Poem.where(photo_id: params[:id]).page(params[:page])
   end
   
   def new

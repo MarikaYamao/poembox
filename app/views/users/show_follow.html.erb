@@ -3,7 +3,7 @@
 </div>
 
 <div class="contents">
-  <input id="followings" type="radio" name="tab_item" checked>
+  <input id="followings" type="radio" name="tab_item">
   <label class="tab_item" for="followings">Followings</label>
   
   <input id="followers" type="radio" name="tab_item">
@@ -21,3 +21,16 @@
     </div>
   </div>
 </div>
+
+<script>
+(function () {
+        let params = location.search;
+    if( ~params.indexOf('followings') ){
+      let element = document.getElementById( "followings" ) ;
+      element.checked = true;
+    }else if( ~params.indexOf('followers') ){
+      let element = document.getElementById( "followers" ) ;
+      element.checked = true;
+    }
+}());
+</script>

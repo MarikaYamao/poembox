@@ -32,6 +32,14 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+  
+  def feed_photos
+    Photo.where( user_id: self.following_ids + [ self.id ] )
+  end
+  
+  def feed_poems
+    Poem.where( user_id: self.following_ids + [ self.id ] )
+  end
 
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)

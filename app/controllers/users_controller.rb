@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
   
   def show
-    @photos = @user.photos.order('created_at DESC')
-    @poems = @user.poems.order('created_at DESC')
+    @photos = @user.photos.order('created_at DESC').page(params[:page])
+    @poems = @user.poems.order('created_at DESC').page(params[:page])
     counts(@user)
   end
   
@@ -44,8 +44,8 @@ class UsersController < ApplicationController
   
   def follow
     @user = User.find(params[:id])
-    @followings = @user.followings.page(params[:page])
-    @followers = @user.followers.page(params[:page])
+    @followings = @user.followings.page(params[:page]).page(params[:page])
+    @followers = @user.followers.page(params[:page]).page(params[:page])
     render 'show_follow'
   end
 
