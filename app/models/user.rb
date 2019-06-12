@@ -18,6 +18,13 @@ class User < ApplicationRecord
   has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverses_of_relationship, source: :user
   
+  has_many :favorites
+  has_many :like_photos
+  has_many :favorites_photo, through: :like_photos, source: :photo
+  has_many :like_poems
+  has_many :favorites_poem, through: :like_poems, source: :poem
+  
+  # フォロー
   def follow(other_user)
     unless self == other_user
       self.relationships.find_or_create_by(follow_id: other_user.id)
@@ -33,6 +40,35 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
   
+  # いいね Photo
+  def like_photo(photo)
+    self.like_photos.find_or_create_by(photo_id: photo.id)
+  end
+  
+  def unlike_photo(photo)
+    like = self.like_photos.find_by(photo_id: photo.id)
+    like.destroy if like_photos
+  end
+  
+  def like_photo?(photo)
+    self.favorites_photo.include?(photo)
+  end
+  
+  # いいね Poem
+  def like_poem(poem)
+    self.like_poems.find_or_create_by(poem_id: poem.id)
+  end
+  
+  def unlike_poem(poem)
+    like = self.like_poems.find_by(poem_id: poem.id)
+    like.destroy if like_poems
+  end
+  
+  def like_poem?(poem)
+    self.favorites_poem.include?(poem)
+  end
+  
+  # タイムライン
   def feed_photos
     Photo.where( user_id: self.following_ids + [ self.id ] )
   end
