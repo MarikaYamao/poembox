@@ -50,7 +50,7 @@ class User < ApplicationRecord
     like.destroy if like_photos
   end
   
-  def like_photo?(photo)
+  def liked_photo?(photo)
     self.favorites_photo.include?(photo)
   end
   
@@ -64,7 +64,7 @@ class User < ApplicationRecord
     like.destroy if like_poems
   end
   
-  def like_poem?(poem)
+  def liked_poem?(poem)
     self.favorites_poem.include?(poem)
   end
   
