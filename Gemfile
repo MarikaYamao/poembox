@@ -90,3 +90,7 @@ gem 'rails-controller-testing'
 group :production do
   gem 'unicorn','5.4.1'
 end
+
+# Heroku用
+gem 'sqlite3', group: [:development, :test]
+gem 'pg', group: :production

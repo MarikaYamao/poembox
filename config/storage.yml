@@ -5,6 +5,12 @@ test:
 local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
+  
+production:
+ <<: *default
+ adapter: postgresql
+ encoding: unicode
+ pool: 5
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
