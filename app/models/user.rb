@@ -13,12 +13,12 @@ class User < ApplicationRecord
   has_many :photos, dependent: :destroy
   has_many :poems, dependent: :destroy
   
-  has_many :relationships
+  has_many :relationships, dependent: :destroy
   has_many :followings, through: :relationships, source: :follow
   has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverses_of_relationship, source: :user
   
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :like_photos
   has_many :favorites_photo, through: :like_photos, source: :photo
   has_many :like_poems

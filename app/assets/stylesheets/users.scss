@@ -33,7 +33,7 @@
     margin-left: 5px;
   }
   
-  .follow {
+  .follow, .favorites {
     margin: 20px 5px;
     
     a {
@@ -136,7 +136,7 @@
       display: inline-block;
     }
     
-    .follow {
+    .follow, .favorites {
       display: inline-block;
       margin: 6px 10px;
       vertical-align: bottom;

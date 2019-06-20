@@ -3,10 +3,20 @@
     <% @poems.each do |poem| %>
       <div class="poem-photo-show">
         <%= link_to poem_path(poem), class: 'poem-responsive' do%>
-          <div><%= simple_format(h(poem.content.truncate(300))) %></div>
+          <div>
+            <h3><%= poem.title %></h3>
+            <%= simple_format(h(poem.content.truncate(300))) %>
+          </div>
         <% end %>
-        <span class="text-muted">posted at <%= poem.created_at.strftime("%Y/%m/%d %H:%M") %> by 
+        <span class="text-muted"><%= poem.created_at.strftime("%Y/%m/%d %H:%M") %>  
             <%= link_to poem.user.name, controller: "users", action: "show", id: poem.user.id, user_name: poem.user.name  %></span>
+        <div class="like_form" id="like-form-<%= poem.id %>">
+          <% if current_user.liked_poem?(poem) %>
+            <%= render 'favorites/unlike_button', type: 'LikePoem', poem: poem %>
+          <% else %>
+            <%= render 'favorites/like_button', type: 'LikePoem', poem: poem %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>

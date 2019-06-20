@@ -18,7 +18,9 @@
   <div></div>
 <% end %>
 <% if current_user == user %>
-  <%= link_to 'Edit', { controller: "users", action: "edit", id: user.id, user_name: user.name } , class: 'btn btn-success btn-xs', remote: true %>
+  <div class='edit'>
+    <%= link_to 'Edit', { controller: "users", action: "edit", id: user.id, user_name: user.name } , class: 'btn btn-success btn-xs', remote: true %>
+  </div>
 <% else %>
   <% unless current_user == user || !logged_in? %>
     <div class="follow-form" id='follow-form-<%= user.id %>'>
@@ -33,4 +35,7 @@
 <div class="follow">
   <%= link_to "followings #{user.followings.count}", follow_user_path(user, followings: '') %>
   <%= link_to "followers #{user.followers.count}", follow_user_path(user, followers: '') %>
+</div>
+<div class="favorites">
+  <%= link_to "like #{user.favorites_photo.count + user.favorites_poem.count}", like_user_path(user) %>
 </div>

@@ -34,6 +34,10 @@ footer {
   max-width: 100%;
 }
 
+textarea {
+  resize: none;
+}
+
 /* ボタン類 */
 
 .btn {
@@ -44,6 +48,7 @@ footer {
   transition: .4s;
   font-size: 14px;
   line-height: 1.3em;
+  background: none;
 }
 
 .btn-success {

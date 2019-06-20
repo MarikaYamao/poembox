@@ -44,9 +44,16 @@ class UsersController < ApplicationController
   
   def follow
     @user = User.find(params[:id])
-    @followings = @user.followings.page(params[:page]).page(params[:page])
-    @followers = @user.followers.page(params[:page]).page(params[:page])
+    @followings = @user.followings.page(params[:page])
+    @followers = @user.followers.page(params[:page])
     render 'show_follow'
+  end
+  
+  def like
+    @user = User.find(params[:id])
+    @photos = @user.favorites_photo.page(params[:page])
+    @poems = @user.favorites_poem.page(params[:page])
+    render 'show_like'
   end
 
   private

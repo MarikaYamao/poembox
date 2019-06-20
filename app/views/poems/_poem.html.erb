@@ -5,12 +5,21 @@
         <%= link_to poem_path(poem) do %>
           <%= image_tag poem.photo.image_name, class: 'img-responsive' %>
           <div class="poem-responsive" >
-            <%= simple_format(h(poem.content.truncate(170))) %>
+            <h3><%= poem.title %></h3>
+            <%= simple_format(h(poem.content.truncate(100))) %>
           </div>
         <% end %>
         <div>
-          <span class="text-muted">posted at <%= poem.created_at.strftime("%Y/%m/%d %H:%M") %> by 
+          <span class="text-muted"><%= poem.created_at.strftime("%Y/%m/%d %H:%M") %>  
           <%= link_to poem.user.name, controller: "users", action: "show", id: poem.user.id, user_name: poem.user.name %></span>
+          
+          <div class="like_form" id="like-form-<%= poem.id %>">
+            <% if current_user.liked_poem?(poem) %>
+              <%= render 'favorites/unlike_button', type: 'LikePoem', poem: poem %>
+            <% else %>
+              <%= render 'favorites/like_button', type: 'LikePoem', poem: poem %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

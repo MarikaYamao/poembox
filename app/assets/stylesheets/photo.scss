@@ -44,6 +44,16 @@ p .img-responsive img:hover{
   .text-muted a{
     width: auto;
   }
+  
+  .like_form{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    
+    .btn .fas {
+      font-size: 20px;
+    }
+  }
 }
 
 @media (max-width: 768px){

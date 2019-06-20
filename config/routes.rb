@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :follow
+      get :like
     end
     collection do
       get :search
@@ -26,4 +27,5 @@ Rails.application.routes.draw do
   
   resources :like_photo, controller: :favorites, type: 'LikePhoto', only: [:create, :destroy]
   resources :like_poem, controller: :favorites, type: 'LikePoem', only: [:create, :destroy]
+  # get 'like/:id', to: 'users#likes'
 end
