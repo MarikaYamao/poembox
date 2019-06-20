@@ -1,0 +1,2 @@
+class LikePoem < Favorite
+end

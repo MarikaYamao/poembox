@@ -1,0 +1,23 @@
+<div class="user" >
+  <%= render @user %>
+</div>
+
+<div class="contents">
+  <input id="poem" type="radio" name="tab_item" checked>
+  <label class="tab_item" for="poem">Poem</label>
+  
+  <input id="photo" type="radio" name="tab_item">
+  <label class="tab_item" for="photo">Photo</label>
+  
+  <div class="tab_content" id="poem_content">
+    <div class="tab_content_description">
+      <%= render 'poems/poem', poems: @poems %>
+    </div>
+  </div>
+  
+  <div class="tab_content" id="photo_content">
+    <div class="tab_content_description">
+      <%= render 'photos/photo', photos: @photos %>
+    </div>
+  </div>
+</div>

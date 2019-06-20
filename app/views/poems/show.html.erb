@@ -9,8 +9,16 @@
       <%= link_to "Delete", @poem, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
       <%= link_to "Edit", edit_poem_path(@poem.id), class: 'btn btn-success btn-xs', remote: true %>
     <% end %>
+    <div class="like_form" id="like-form-<%= @poem.id %>">
+      <% if current_user.liked_poem?(@poem) %>
+        <%= render 'favorites/unlike_button', type: 'LikePoem', poem: @poem %>
+      <% else %>
+        <%= render 'favorites/like_button', type: 'LikePoem', poem: @poem %>
+      <% end %>
+    </div>
   </div>
   <div class="poem-container">
+    <h3><%= @poem.title %></h3>
     <%= simple_format(h(@poem.content)) %>
   </div>
 </div>

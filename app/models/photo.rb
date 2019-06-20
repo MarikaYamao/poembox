@@ -6,6 +6,11 @@ class Photo < ApplicationRecord
   validate :validate_image
   
   has_many :poems, dependent: :destroy
+  
+  has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
+  has_many :like_photos, dependent: :destroy
+  has_many :favorites_photo, through: :like_photos, source: :user
 
   def validate_image
     if !image_name.attached?

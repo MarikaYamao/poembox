@@ -38,6 +38,16 @@
     height: 200px;
     overflow: hidden;
   }
+  
+  .like_form{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    
+    .btn .fas {
+      font-size: 20px;
+    }
+  }
 }
 
 .poem-show-box .text-muted a, .poem-photo-show .text-muted a{
@@ -45,11 +55,21 @@
   overflow: unset;
 }
 
-.poem-responsive p {
-  color: #000;
-  margin: 5px 20px;
-  font-size: 12px; 
-  line-height: 1.5;
+.poem-responsive {
+  p {
+    color: #000;
+    margin: 5px 20px;
+    font-size: 12px; 
+    line-height: 1.5;
+  }
+  h3 {
+    color: #555;
+    margin: 5px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    max-height: 40px;
+    overflow: hidden;
+  }
 }
 
 
@@ -135,6 +155,16 @@
     text-decoration: none;
     background-color: rgba(90, 180, 189, 0.3);
   }
+  
+  .like_form{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    
+    .btn .fas {
+      font-size: 20px;
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -164,6 +194,10 @@
   width: 90%;
   line-height: 1.7;
   font-size: 13px;
+  
+  h3 {
+    margin-bottom: 20px;
+  }
 }
 
 /*# sourceMappingURL=poems.css.map */

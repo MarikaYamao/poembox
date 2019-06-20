@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  user: one
+  photo: one
+  poem: one
+
+two:
+  type: 
+  user: two
+  photo: two
+  poem: two

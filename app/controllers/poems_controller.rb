@@ -55,7 +55,7 @@ class PoemsController < ApplicationController
   end
   
   def poem_params
-    params.require(:poem).permit(:content,:photo_id)
+    params.require(:poem).permit(:title, :content, :photo_id)
   end
   
   def correct_user
