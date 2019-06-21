@@ -10,7 +10,6 @@
     <% end %>
     <% if logged_in? %>
     <%= link_to 'Post Poem', new_poem_path(@photo.id), class: 'btn btn-success btn-xs', remote: true %>
-    <% end %>
     <div class="like_form" id="like-form-<%= @photo.id %>">
       <% if current_user.liked_photo?(@photo) %>
         <%= render 'favorites/unlike_button', type: 'LikePhoto', photo: @photo %>
@@ -18,6 +17,7 @@
         <%= render 'favorites/like_button', type: 'LikePhoto', photo: @photo %>
       <% end %>
     </div>
+    <% end %>
   </div>
   <%= render 'poems/photo' %>
 </div>
