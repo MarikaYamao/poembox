@@ -1,0 +1,15 @@
+ja:
+  users:
+    edit_form:
+      submit: 保存
+      cancel: キャンセル
+      select_image: 画像を選択
+    new_form:
+      signup: 新規登録
+      create: 作成
+      cancel: キャンセル
+    user:
+      edit: 編集 
+    show:
+    show_follow:
+    show_like:

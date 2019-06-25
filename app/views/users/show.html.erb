@@ -4,20 +4,30 @@
 
 <div class="contents">
   <input id="poem" type="radio" name="tab_item" checked>
-  <label class="tab_item" for="poem">Poem</label>
+  <label class="tab_item" for="poem"><%= t 'poem' %></label>
   
   <input id="photo" type="radio" name="tab_item">
-  <label class="tab_item" for="photo">Photo</label>
+  <label class="tab_item" for="photo"><%= t 'photo' %></label>
   
   <div class="tab_content" id="poem_content">
     <div class="tab_content_description">
       <%= render 'poems/poem', poems: @poems %>
+        <% if current_user == @user && @poems.blank? %>
+          <div class="none-contents">
+            <%= link_to t('postpoem'), all_path, class: 'btn btn-success btn-lg' %>
+          </div>
+        <% end %>
     </div>
   </div>
   
   <div class="tab_content" id="photo_content">
     <div class="tab_content_description">
       <%= render 'photos/photo', photos: @photos %>
+        <% if current_user == @user && @photos.blank? %>
+          <div class="none-contents">
+            <%= link_to t('postphoto'), new_photo_path, remote: true, class: 'btn btn-success btn-lg' %>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>

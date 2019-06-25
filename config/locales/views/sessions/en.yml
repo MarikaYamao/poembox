@@ -1,0 +1,5 @@
+en:
+  sessions:
+    form:
+      login: Login
+      cancel: Cancel

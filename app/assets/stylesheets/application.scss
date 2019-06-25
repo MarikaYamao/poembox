@@ -173,7 +173,7 @@ textarea {
       text-align: center;
       position: relative;
       
-      h1 {
+      h2 {
         margin: 0 0 20px 0;
         color: #fff;
         font-weight: bold;
@@ -192,7 +192,7 @@ textarea {
 }
 
 @media (max-width: 768px){
-  .cover .cover-inner .cover-contents h1{
+  .cover .cover-inner .cover-contents h2{
     font-size: 25px;
   }
 }
@@ -289,6 +289,34 @@ textarea {
       width: auto;
       padding: 10px 5px;
       margin: 5px 0;
+    }
+  }
+}
+
+/* --- コンテンツ --- */
+
+.tab_content_description {
+  .none-contents {
+    margin: 30px 20px;
+    
+    .btn {
+      padding: 20px 40px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  /* タブレット */
+  .tab_content_description {
+    .none-contents {
+      position: relative;
+      height: 100px;
+      
+      .btn {
+        position: absolute;
+        right: 0;
+        left: 0;
+      }
     }
   }
 }

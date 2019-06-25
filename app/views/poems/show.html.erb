@@ -6,8 +6,8 @@
   <p><%= link_to image_tag(@photo.image_name), photo_path(@photo), class: 'img-responsive' %></p>
   <div>
     <% if current_user == @poem.user %>
-      <%= link_to "Delete", @poem, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
-      <%= link_to "Edit", edit_poem_path(@poem.id), class: 'btn btn-success btn-xs', remote: true %>
+      <%= link_to t('.delete'), @poem, method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger btn-xs' %>
+      <%= link_to t('.edit'), edit_poem_path(@poem.id), class: 'btn btn-success btn-xs', remote: true %>
     <% end %>
     <% if logged_in? %>
       <div class="like_form" id="like-form-<%= @poem.id %>">

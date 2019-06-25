@@ -6,10 +6,10 @@
 
   <div class="contents">
     <input id="poem" type="radio" name="tab_item">
-    <label class="tab_item" for="poem">Poem</label>
+    <label class="tab_item" for="poem"><%= t 'poem' %></label>
     
     <input id="photo" type="radio" name="tab_item" checked>
-    <label class="tab_item" for="photo">Photo</label>
+    <label class="tab_item" for="photo"><%= t 'photo' %></label>
     
     <div class="tab_content" id="poem_content">
       <div class="tab_content_description">
@@ -29,18 +29,18 @@
     <div class="cover">
       <div class="cover-inner">
         <div class="cover-contents">
-          <h1>Post Poem With Emotional Image</h1>
-              <%= link_to 'Begin POEMBOX', signup_path, class: 'btn btn-success btn-lg', remote: true %>
+          <h2><%= t '.heading' %></h2>
+              <%= link_to t('.begin'), signup_path, class: 'btn btn-success btn-lg', remote: true %>
         </div>
       </div>
     </div>
   <% end %>
   <div class="contents">
     <input id="poem" type="radio" name="tab_item">
-    <label class="tab_item" for="poem">Poem</label>
+    <label class="tab_item" for="poem"><%= t 'poem' %></label>
     
     <input id="photo" type="radio" name="tab_item" checked>
-    <label class="tab_item" for="photo">Photo</label>
+    <label class="tab_item" for="photo"><%= t 'photo' %></label>
     
     <div class="tab_content" id="poem_content">
       <div class="tab_content_description">

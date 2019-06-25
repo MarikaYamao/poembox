@@ -15,7 +15,7 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.build(photo_params)
     if @photo.save
-      flash[:success] = 'The photo has been posted.'
+      flash[:success] = t('.success')
       redirect_to @photo
     else
       if @photo.errors.any?
@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
           flash.now[:danger] = msg
         end
       else
-        flash.now[:danger] = 'Failed to post a photo.'
+        flash.now[:danger] = t('.failed')
       end
       render :new
     end
@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo.destroy
-    flash[:success] = 'The photo has been deleted.'
+    flash[:success] = t('.success')
     redirect_to root_url
   end
   
