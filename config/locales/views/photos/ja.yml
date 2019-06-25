@@ -1,0 +1,11 @@
+ja:
+  photos:
+    form:
+      postphoto: 写真を投稿
+      select: 画像を選択
+      post: 投稿
+      cancel: キャンセル
+    show:
+      postpoem: ポエムを投稿
+      delete: 削除
+      confirm: 写真を削除してよろしいですか（写真に投稿されたポエムも削除されます）

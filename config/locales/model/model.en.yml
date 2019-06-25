@@ -1,0 +1,45 @@
+en:
+  activerecord:
+    models:
+      user:   User
+      photo:  Photo
+      poem:   Poem
+      favorite: Like
+      relationship: Follow
+    attributes:
+      user:
+        id:     User ID
+        name:   Name
+        email:  Email
+        password: Password
+        password_confirmation: Password Confirmation
+        image: Image
+        note:  Note
+        time_zone: TimeZone
+        locale: Language
+      photo:
+        id:      Photo ID
+        user_id: User ID
+      poem:
+        id:       Poem ID
+        user_id:  User ID
+        photo_id: Photo ID
+        title:    Title
+        content:  Content
+      favorite:
+        id:       Like ID
+        user_id:  User ID
+        photo_id: Photo ID
+        poem_id:  Poem ID
+        type:     Type
+      relationship:
+        id:       Relation ID
+        user_id:  User ID
+        follow_id:  Follow ID
+    errors:
+      models:
+        photo:
+          attributes:
+            base:
+              none: Please select a photo.
+              type: Please post in JPEG or PNG format.

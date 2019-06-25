@@ -1,0 +1,11 @@
+ja:
+  layouts:
+    footer:
+    navbar:
+      allpost: 全投稿
+      postimage: 写真を投稿
+      logout: ログアウト
+      signup: 新規登録
+      login: ログイン
+    application:
+      

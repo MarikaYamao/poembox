@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/* POEM */
+.poem-show-box {
+  width: 45%;
+  height: 250px;
+  margin: 20px 10px;
+  padding: 10px;
+  border: 1px solid #a3a3a3;
+  vertical-align: top;
+  display: inline-block;
+  position: relative; }
+  .poem-show-box a, .poem-show-box img {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%; }
+  .poem-show-box img {
+    width: 200px;
+    padding: 5px;
+    object-fit: cover; }
+  .poem-show-box .text-muted, .poem-show-box .post-date {
+    position: absolute;
+    bottom: 10px;
+    left: 10px; }
+  .poem-show-box a:hover {
+    text-decoration: none;
+    background-color: rgba(90, 180, 189, 0.3); }
+  .poem-show-box .poem-responsive, .poem-show-box img {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 200px;
+    overflow: hidden; }
+  .poem-show-box .like_form {
+    position: absolute;
+    bottom: 7px;
+    right: 7px; }
+    .poem-show-box .like_form .btn .fas {
+      font-size: 20px; }
+
+.poem-show-box .text-muted a, .poem-photo-show .text-muted a {
+  width: auto;
+  overflow: unset; }
+
+.poem-responsive p {
+  color: #000;
+  margin: 5px 20px;
+  font-size: 12px;
+  line-height: 1.5; }
+.poem-responsive h3 {
+  color: #555;
+  margin: 5px 20px;
+  font-weight: bold;
+  font-size: 15px;
+  max-height: 40px;
+  overflow: hidden; }
+
+@media (max-width: 992px) {
+  /* タブレット */
+  .poem-show-box {
+    width: 95%;
+    height: 250px; }
+    .poem-show-box .poem-responsive {
+      width: calc( 98% - 200px ); }
+    .poem-show-box img {
+      height: 200px;
+      width: 200px; }
+    .poem-show-box p {
+      margin: 5px 20px; } }
+@media (max-width: 480px) {
+  /* スマホ */
+  .poem-show-box {
+    width: 95%;
+    height: 370px;
+    margin: 10px; }
+    .poem-show-box .poem-responsive {
+      width: 100%;
+      height: 130px; }
+    .poem-show-box img {
+      width: 98%;
+      max-height: 300px; }
+    .poem-show-box p {
+      margin: 5px 20px;
+      font-size: 12px; }
+    .poem-show-box a {
+      width: 98%; }
+    .poem-show-box div a {
+      width: 40%; } }
+/* PHOTO SHOW */
+.poem-photo-show {
+  width: 45%;
+  height: 250px;
+  margin: 20px 10px;
+  padding: 10px;
+  border: 1px solid #a3a3a3;
+  vertical-align: top;
+  display: inline-block;
+  position: relative; }
+  .poem-photo-show .text-muted, .poem-photo-show .post-date {
+    position: absolute;
+    bottom: 10px;
+    left: 10px; }
+  .poem-photo-show a {
+    display: inline-block;
+    width: 100%;
+    height: 90%;
+    overflow: hidden; }
+  .poem-photo-show a:hover {
+    text-decoration: none;
+    background-color: rgba(90, 180, 189, 0.3); }
+  .poem-photo-show .like_form {
+    position: absolute;
+    bottom: 7px;
+    right: 7px; }
+    .poem-photo-show .like_form .btn .fas {
+      font-size: 20px; }
+
+@media (max-width: 480px) {
+  /* スマホ */
+  .poem-photo-show {
+    width: 95%;
+    height: 200px;
+    margin: 10px; }
+    .poem-photo-show p {
+      margin: 5px 20px;
+      font-size: 12px; }
+    .poem-photo-show a {
+      width: 98%; }
+    .poem-photo-show div a {
+      width: 40%; } }
+.poem-container {
+  margin: 20px auto;
+  width: 90%;
+  line-height: 1.7;
+  font-size: 13px; }
+  .poem-container h3 {
+    margin-bottom: 20px; }
+
+/*# sourceMappingURL=poems.css.map */
+
+/*# sourceMappingURL=poems.css.map */

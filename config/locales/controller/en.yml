@@ -1,0 +1,37 @@
+en:
+  users:
+    create:
+     success: User registration successful.
+     failed: Failed to register user.
+    update:
+     success: Has been updated.
+     failed: Update failed.
+    logged_in_user:
+      failed: Please log in.
+    correct_user:
+      failed: Can not get the specified url.
+  sessions:
+   create:
+     success: Login succeeded.
+     failed: Failed to login.
+   destroy:
+     success: Logged out.
+  poems:
+    create:
+     success: Posted a poem.
+     failed: Poem failed to post.
+    update:
+     success: Poem has been updated.
+     failed: Failed to update the poem.
+    destroy:
+     success: Poem has been deleted.
+     failed: Failed to delete the poem.
+    correct_user:
+      failed: Can not get the specified url.
+  photos:
+    create:
+     success: Posted a photo.
+     failed: Photo failed to post.
+    destroy:
+     success: Photo has been deleted.
+     failed: Failed to delete the photo.

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :follow, :like]
   before_action :correct_user,   only: [:edit, :update]
   
   def index
@@ -17,10 +17,10 @@ class UsersController < ApplicationController
   
   def update
     if @user.update(user_params)
-      flash[:success] = 'Has been updated.'
-      redirect_to controller: 'users', action: 'show', id: @user.id, user_name: @user.name
+      flash[:success] = t('.success')
+      redirect_to controller: 'users', action: 'show', id: @user.id, user_name: @user.name, locale: @user.locale
     else
-      flash.now[:danger] = 'Update failed.'
+      flash.now[:danger] = t('.failed')
       render :edit
     end
   end
@@ -34,23 +34,21 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in(@user)
-      flash[:success] = 'User registration successful.'
+      flash[:success] = t('.success')
       redirect_to controller: 'users', action: 'show', id: @user.id, user_name: @user.name
     else
-      flash.now[:danger] = 'Failed to register user.'
+      flash.now[:danger] = t('.failed')
       render :new
     end
   end
   
   def follow
-    @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
     @followers = @user.followers.page(params[:page])
     render 'show_follow'
   end
   
   def like
-    @user = User.find(params[:id])
     @photos = @user.favorites_photo.page(params[:page])
     @poems = @user.favorites_poem.page(params[:page])
     render 'show_like'
@@ -65,19 +63,19 @@ class UsersController < ApplicationController
   def logged_in_user
     unless logged_in?
       store_location
-      flash[:danger] = "Please log in."
+      flash[:danger] = t('.failed')
       redirect_to login_url
     end
   end
 
   def correct_user
     unless current_user?(@user)
-      flash[:danger] = "Can not get the specified url."
+      flash[:danger] = t('.failed')
       redirect_to(root_url)
     end
   end
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :note)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :note, :time_zone, :locale)
   end
 end

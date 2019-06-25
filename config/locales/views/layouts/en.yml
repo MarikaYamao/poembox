@@ -1,0 +1,11 @@
+en:
+  layouts:
+    footer:
+    navbar:
+      allpost: All Post
+      postimage: Post Photo
+      logout: Logout
+      signup: Sign Up
+      login: Login
+    application:
+      

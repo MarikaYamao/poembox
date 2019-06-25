@@ -1,22 +1,22 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="panel panel-default">
-      <div class="panel-heading">Login</div>
+      <div class="panel-heading"><%= t '.login' %></div>
       <div class="panel-body">
         <%= form_with(url: login_path, remote: true) do |f| %>
           <%= render 'layouts/flash_messages' %>
           <div class="form-group">
-            <%= f.label :email, 'Email' %>
+            <%= f.label :email, t('activerecord.attributes.user.email') %>
             <%= f.email_field :email, class: 'form-control' %>
           </div>
 
           <div class="form-group">
-            <%= f.label :password, 'Password' %>
+            <%= f.label :password, t('activerecord.attributes.user.password') %>
             <%= f.password_field :password, class: 'form-control' %>
           </div>
           <div class="text-right">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <%= f.submit 'Login', class: 'btn btn-success' %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t '.cancel' %></button>
+            <%= f.submit t('.login'), class: 'btn btn-success' %>
           </div>
         <% end %>
       </div>

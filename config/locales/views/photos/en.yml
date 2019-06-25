@@ -1,0 +1,11 @@
+en:
+  photos:
+    form:
+      postphoto: Post Photo
+      select: Select
+      post: Post
+      cancel: Cancel
+    show:
+      postpoem: Post Poem
+      delete: Delete
+      confirm: Are you sure you want to delete? (the poem posted to the photo will also be deleted)

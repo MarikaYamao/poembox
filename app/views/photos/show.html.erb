@@ -6,10 +6,10 @@
   <p><%= image_tag @photo.image_name , class:'img-responsive' %></p>
   <div>
     <% if current_user == @photo.user %>
-      <%= link_to "Delete Photo", @photo, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+      <%= link_to t('.delete'), @photo, method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger btn-xs' %>
     <% end %>
     <% if logged_in? %>
-    <%= link_to 'Post Poem', new_poem_path(@photo.id), class: 'btn btn-success btn-xs', remote: true %>
+    <%= link_to t('.postpoem'), new_poem_path(locale, @photo.id), class: 'btn btn-success btn-xs', remote: true %>
     <div class="like_form" id="like-form-<%= @photo.id %>">
       <% if current_user.liked_photo?(@photo) %>
         <%= render 'favorites/unlike_button', type: 'LikePhoto', photo: @photo %>

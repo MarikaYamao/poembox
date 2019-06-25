@@ -1,0 +1,40 @@
+ja:
+  users:
+    create:
+     success: 登録に成功しました。
+     failed: 登録に失敗しました。
+    update:
+     success: 更新しました。
+     failed: 更新に失敗しました。
+    logged_in_user:
+      failed: ログインしてください。
+    correct_user:
+      failed: 指定されたURLを取得できません。
+  sessions:
+   create:
+     success: ログインしました。
+     failed: ログインに失敗しました。
+   destroy:
+     success: ログアウトしました。
+  poems:
+    create:
+     success: ポエムを投稿しました。
+     failed: ポエムの投稿に失敗しました。
+    update:
+     success: ポエムを更新しました。
+     failed: ポエムの更新に失敗しました。
+    destroy:
+     success: ポエムを削除しました。
+     failed: ポエムの削除に失敗しました。
+    correct_user:
+      failed: 指定されたURLを取得できません。
+  photos:
+    create:
+     success: 写真を投稿しました。
+     failed: 写真の投稿に失敗しました。
+    destroy:
+     success: 写真を削除しました。
+     failed: 写真の削除に失敗しました。
+    correct_user:
+      failed: 指定されたURLを取得できません。
+    

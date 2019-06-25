@@ -1,0 +1,45 @@
+ja:
+  activerecord:
+    models:
+      user:   ユーザー
+      photo:  写真
+      poem:   ポエム
+      favorite: いいね
+      relationship: フォロー
+    attributes:
+      user:
+        id:     ユーザーID
+        name:   ユーザー名
+        email:  メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認）
+        image: 画像
+        note:  自己紹介
+        time_zone: タイムゾーン
+        locale: 言語
+      photo:
+        id:      写真ID
+        user_id: ユーザーID
+      poem:
+        id:       ポエムID
+        user_id:  ユーザーID
+        photo_id: 写真ID
+        title:    タイトル
+        content:  本文
+      favorite:
+        id:       いいねID
+        user_id:  ユーザーID
+        photo_id: 写真ID
+        poem_id:  ポエムID
+        type:     種類
+      relationship:
+        id:       関係ID
+        user_id:  ユーザーID
+        follow_id:  フォローID
+    errors:
+      models:
+        photo:
+          attributes:
+            base:
+              none: 画像を選択してください。
+              type: JPEGかPNGの形式で投稿してください。

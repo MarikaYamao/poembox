@@ -1,0 +1,15 @@
+en:
+  users:
+    edit_form:
+      submit: Submit
+      cancel: Cancel
+      select_image: Select Image
+    new_form:
+      signup: Sign Up!
+      create: Create My Account!
+      cancel: Cancel
+    user:
+      edit: Edit
+    show:
+    show_follow:
+    show_like:

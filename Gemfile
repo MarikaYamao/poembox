@@ -85,6 +85,9 @@ group :development do
   gem "binding_of_caller"
 end
 
+# 国際化
+gem 'rails-i18n', '~> 5.1'
+
 gem 'rails-controller-testing'
 
 group :production do

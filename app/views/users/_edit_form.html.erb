@@ -6,33 +6,43 @@
         <%= form_with(model: @user, remote: true, class: 'user-form') do |f| %>
         <%= render 'layouts/error_messages' %>
           <div class="form-group">
-            <%= f.label :name, 'Name' %>
+            <%= f.label :name, t('activerecord.attributes.user.name') %>
             <%= f.text_field :name, class: 'form-control' %>
           </div>
 
           <div class="form-group">
-            <%= f.label :email, 'Emil' %>
+            <%= f.label :email, t('activerecord.attributes.user.email') %>
             <%= f.email_field :email, class: 'form-control' %>
           </div>
 
 
           <div class="form-group">
-            <%= f.label :password, 'Password' %>
+            <%= f.label :password, t('activerecord.attributes.user.password') %>
             <%= f.password_field :password, class: 'form-control' %>
           </div>
 
           <div class="form-group">
-            <%= f.label :password_confirmation, 'Confirmation' %>
+            <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
           </div>
           
           <div class="form-group">
-            <%= f.label :note, 'Note' %>
+            <%= f.label :time_zone, t('activerecord.attributes.user.time_zone') %>
+            <%= f.time_zone_select :time_zone, nil, {}, {:class => 'form-control time_zone'} %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :locale, t('activerecord.attributes.user.locale') %>
+            <%= f.select :locale, I18n.available_locales, {}, {class: 'form-control locale'}%>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :note, t('activerecord.attributes.user.note') %>
             <%= f.text_area :note, class: 'form-control', rows: 5 %>
           </div>
           
           <div class="form-group">
-            <%= f.label :image, 'Select Image', class: 'btn btn-secondary' %>
+            <%= f.label :image, t('.select_image'), class: 'btn btn-secondary' %>
             <%= f.file_field :image, class: 'hidden' %>
             
             <% if @user.image.attached? %>
@@ -43,8 +53,8 @@
           </div>
 
           <div class="text-right">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <%= f.submit 'Submit', class: 'btn btn-success' %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t '.cancel' %></button>
+            <%= f.submit t('.submit'), class: 'btn btn-success' %>
           </div>
         <% end %>
       </div>

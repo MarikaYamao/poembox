@@ -1,0 +1,11 @@
+ja:
+  poems:
+    form:
+      postpoem: ポエム投稿
+      post: 投稿
+      cancel: キャンセル
+      placeholder: タイトルは必須です。
+    show:
+      edit: 編集
+      delete: 削除
+      confirm: 削除してよろしいですか
