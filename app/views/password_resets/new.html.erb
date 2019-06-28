@@ -1,7 +1,7 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="panel panel-default">
-      <div class="panel-heading">Forgot Password</div>
+      <div class="panel-heading"><%= t '.forgot' %></div>
       <div class="panel-body">
         <%= form_with(url: password_resets_path, class: 'login-form') do |f| %>
           <%= render 'layouts/flash_messages' %>
@@ -11,7 +11,7 @@
           </div>
           
           <div class="form-group">
-            <%= f.submit 'Send Email', class: 'btn btn-success' %>
+            <%= f.submit t('.send'), class: 'btn btn-success' %>
           </div>
         <% end %>
       </div>

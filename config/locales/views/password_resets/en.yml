@@ -1,0 +1,8 @@
+en:
+  password_resets:
+    new:
+      forgot: Forgot Password
+      send: Send Email
+    edit:
+      reset: Reset Password
+      submit: Submit
