@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:create, :destroy, :show, :new]
     resources :poems, only: [:create, :destroy, :show, :new, :edit, :update]
     resources :relationships, only: [:create, :destroy]
+    resources :password_resets,     only: [:new, :create, :edit, :update]
     
     get 'login', to: 'sessions#new'
     post 'login', to: 'sessions#create'

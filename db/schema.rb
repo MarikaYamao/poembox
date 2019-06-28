@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_27_073620) do
+ActiveRecord::Schema.define(version: 2019_06_28_011723) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 2019_06_27_073620) do
     t.string "locale"
     t.string "time_zone"
     t.string "remember_digest"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
