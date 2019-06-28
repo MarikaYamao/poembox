@@ -3,3 +3,4 @@ en:
     form:
       login: Login
       cancel: Cancel
+      remember_me: Remember me on this computer

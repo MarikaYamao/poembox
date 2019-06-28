@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     email = params[:email].downcase
     password = params[:password]
     if login(email, password)
+      params[:remember_me] == '1' ? remember(user) : forget(user)
       flash[:success] = t('.success')
       redirect_to root_url(locale: @user.locale)
     else
@@ -15,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     flash[:success] = t('.success')
     redirect_to root_url
   end
@@ -26,6 +27,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: email)
     if @user && @user.authenticate(password)
       log_in(@user)
+      remember(@user)
       return true
     else
       return false
