@@ -35,3 +35,11 @@ en:
     destroy:
      success: Photo has been deleted.
      failed: Failed to delete the photo.
+  password_resets:
+    create:
+      success: Please check email and reset password.
+      failed: Email address not found.
+    edit:
+      success: Password has been reset.
+    check_expiration:
+      failed: Password reset has expired.

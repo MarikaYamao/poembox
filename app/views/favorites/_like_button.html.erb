@@ -4,10 +4,12 @@
     <%= hidden_field_tag :type, 'LikePhoto' %>
     <%= button_tag '<i class="fas fa-heart"></i>'.html_safe, :type => 'submit', :class =>'btn btn-like' %>
   <% end %>
+  <span class="btn-like"><%= photo.like_photos.count %></span>
 <% elsif type == 'LikePoem' %>
   <%= form_with(url: like_poem_index_path, remote: true) do %>
     <%= hidden_field_tag :poem_id, poem.id %>
     <%= hidden_field_tag :type, 'LikePoem' %>
     <%= button_tag '<i class="fas fa-heart"></i>'.html_safe, :type => 'submit', :class =>'btn btn-like' %>
   <% end %>
+  <span class="btn-like"><%= poem.like_poems.count %></span>
 <% end %>

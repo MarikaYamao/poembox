@@ -1,0 +1,8 @@
+ja:
+  password_resets:
+    new:
+      forgot: パスワードを忘れた場合
+      send: メールを送信
+    edit:
+      reset: パスワードのリセット
+      submit: 確定

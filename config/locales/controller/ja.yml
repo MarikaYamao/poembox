@@ -37,4 +37,11 @@ ja:
      failed: 写真の削除に失敗しました。
     correct_user:
       failed: 指定されたURLを取得できません。
-    
+  password_resets:
+    create:
+      success: メールを確認してパスワードを再設定してください。
+      failed: メールアドレスがみつかりませんでした。
+    edit:
+      success: パスワードをリセットしました。
+    check_expiration:
+      failed: パスワードのリセット期限が切れました。
