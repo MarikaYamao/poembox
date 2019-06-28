@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
     email = params[:email].downcase
     password = params[:password]
     if login(email, password)
-      params[:remember_me] == '1' ? remember(user) : forget(user)
+      if params[:remember_me] == '1'
+        @user.remember
+      end
       flash[:success] = t('.success')
       redirect_to root_url(locale: @user.locale)
     else
