@@ -3,3 +3,4 @@ ja:
     form:
       login: ログイン
       cancel: キャンセル
+      remember_me: ログイン情報を保存する

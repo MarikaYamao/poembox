@@ -253,3 +253,33 @@
     }
   }
 }
+
+/* ----- Login Form ----- */
+
+.login-form {
+  .form-group label {
+    margin-left: 10px;
+    line-height: 20px;
+    
+    input[type="checkbox"] {
+      width: auto;
+      height: auto;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 5px;
+    }
+    
+    span {
+      font-weight: normal;
+    }
+  }
+  
+  .forgot-password {
+    margin-left: 25px;
+    margin-bottom: 0;
+    
+    a {
+      color: #777;
+    }
+  }
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_24_090216) do
+ActiveRecord::Schema.define(version: 2019_06_28_011723) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_090216) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "delete_flg", default: 0, null: false
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_090216) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.integer "delete_flg", default: 0, null: false
     t.index ["photo_id"], name: "index_poems_on_photo_id"
     t.index ["user_id"], name: "index_poems_on_user_id"
   end
@@ -83,6 +85,9 @@ ActiveRecord::Schema.define(version: 2019_06_24_090216) do
     t.datetime "updated_at", null: false
     t.string "locale"
     t.string "time_zone"
+    t.string "remember_digest"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

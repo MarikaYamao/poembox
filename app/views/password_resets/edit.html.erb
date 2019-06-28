@@ -1,0 +1,25 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="panel panel-default">
+      <div class="panel-heading">Forgot Password</div>
+      <div class="panel-body">
+        <%= form_with(model: @user,url: password_reset_path(params[:id]), class: 'login-form') do |f| %>
+          <%= render 'layouts/error_messages' %>
+          <%= hidden_field_tag :email, @user.email %>
+          <div class="form-group">
+            <%= f.label :password, t('activerecord.attributes.user.password') %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.submit 'Reset Password', class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
