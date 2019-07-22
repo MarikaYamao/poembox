@@ -10,7 +10,7 @@
       <%= link_to t('.edit'), edit_poem_path(@poem.id), class: 'btn btn-success btn-xs', remote: true %>
     <% end %>
     <% if logged_in? %>
-      <div class="like_form" id="like-form-<%= @poem.id %>">
+      <div class="like_form" id="like-form-poem-<%= @poem.id %>">
         <% if current_user.liked_poem?(@poem) %>
           <%= render 'favorites/unlike_button', type: 'LikePoem', poem: @poem %>
         <% else %>

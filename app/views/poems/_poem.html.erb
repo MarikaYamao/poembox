@@ -13,7 +13,7 @@
           <span class="text-muted"><%= poem.created_at.strftime("%Y/%m/%d %H:%M") %>  
           <%= link_to poem.user.name, controller: "users", action: "show", id: poem.user.id, user_name: poem.user.name %></span>
           <% if logged_in? %>
-            <div class="like_form" id="like-form-<%= poem.id %>">
+            <div class="like_form" id="like-form-poem-<%= poem.id %>">
               <% if current_user.liked_poem?(poem) %>
                 <%= render 'favorites/unlike_button', type: 'LikePoem', poem: poem %>
               <% else %>
