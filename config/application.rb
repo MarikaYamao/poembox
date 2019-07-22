@@ -22,6 +22,8 @@ module Poembox
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s] # ローケルを読み込む
     config.i18n.available_locales = %i(ja en)
     config.i18n.enforce_available_locales = true
+    
+    config.assets.initialize_on_precompile = false
   end
 end
 
