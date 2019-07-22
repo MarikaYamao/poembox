@@ -1,3 +1,6 @@
+<% set_meta_tags title: @poem.title.truncate(20), description: @poem.content.truncate(30), 
+                  og: { title: @poem.title, url: poem_url(@poem,:only_path => false), image: @photo.image_name.attachment.service.send(:object_for, @photo.image_name.key).public_url } %>
+
 <div class="user" >
   <%= render @poem.user %>
 </div>
@@ -17,6 +20,10 @@
           <%= render 'favorites/like_button', type: 'LikePoem', poem: @poem %>
         <% end %>
       </div>
+      <a href="https://twitter.com/intent/tweet?text=<%= @poem.content.truncate(80) %>&url=<%= poem_url(@poem,:only_path => false) %>&hashtags=poembox&via=Poembox"
+          target="_blank">
+          <i class="fab fa-twitter"></i>
+      </a>
     <% end %>
   </div>
   <div class="poem-container">

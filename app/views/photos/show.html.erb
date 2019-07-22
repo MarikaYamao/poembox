@@ -1,3 +1,6 @@
+<% set_meta_tags title: t('Photo'), description: @photo.user.name + ' | Photo', 
+                  og: { title: t('Photo'), url: photo_url(@photo,:only_path => false), image: @photo.image_name.attachment.service.send(:object_for, @photo.image_name.key).public_url } %>
+
 <div class="user" >
   <%= render @photo.user %>
 </div>
@@ -9,14 +12,18 @@
       <%= link_to t('.delete'), @photo, method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger btn-xs' %>
     <% end %>
     <% if logged_in? %>
-    <%= link_to t('.postpoem'), new_poem_path(locale, @photo.id), class: 'btn btn-success btn-xs', remote: true %>
-    <div class="like_form" id="like-form-photo-<%= @photo.id %>">
-      <% if current_user.liked_photo?(@photo) %>
-        <%= render 'favorites/unlike_button', type: 'LikePhoto', photo: @photo %>
-      <% else %>
-        <%= render 'favorites/like_button', type: 'LikePhoto', photo: @photo %>
-      <% end %>
-    </div>
+      <%= link_to t('.postpoem'), new_poem_path(locale, @photo.id), class: 'btn btn-success btn-xs', remote: true %>
+      <div class="like_form" id="like-form-photo-<%= @photo.id %>">
+        <% if current_user.liked_photo?(@photo) %>
+          <%= render 'favorites/unlike_button', type: 'LikePhoto', photo: @photo %>
+        <% else %>
+          <%= render 'favorites/like_button', type: 'LikePhoto', photo: @photo %>
+        <% end %>
+      </div>
+      <a href="https://twitter.com/intent/tweet?text=&url=<%= photo_url(@photo,:only_path => false) %>&hashtags=poembox&via=Poembox"
+          target="_blank">
+          <i class="fab fa-twitter"></i>
+      </a>
     <% end %>
   </div>
   <%= render 'poems/photo' %>

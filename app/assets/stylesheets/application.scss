@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@charset "utf-8";
 @import "bootstrap";
+@charset "utf-8";
 
 /* body */
 body {
@@ -85,6 +85,15 @@ textarea {
   background-color: #007bff;
   color: #fff;
   border-color: #007bff;
+}
+
+.fab {
+  font-size: 20px;
+}
+
+.like_form + a .fab {
+  vertical-align: middle;
+  margin-top: -3px;
 }
 
 @media (max-width: 480px) {
