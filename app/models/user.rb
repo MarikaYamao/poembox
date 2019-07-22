@@ -10,8 +10,8 @@ class User < ApplicationRecord
   validates :note, length: { maximum: 255 }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :image, content_type: ['image/png', 'image/jpg', 'image/jpeg'], allow_nil: true
-  validates :locale, inclusion: { in: %w(ja en) }
-  validates :time_zone, inclusion: { in: ActiveSupport::TimeZone::MAPPING.keys }
+  validates :locale, inclusion: { in: %w(ja en) }, allow_nil: true
+  validates :time_zone, inclusion: { in: ActiveSupport::TimeZone::MAPPING.keys }, allow_nil: true
   
   
   has_many :photos, dependent: :destroy
