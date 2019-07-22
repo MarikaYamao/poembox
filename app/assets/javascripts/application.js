@@ -18,6 +18,4 @@
 //= require jquery_ujs 
 //= require jquery3
 //= require popper
-$(document).ready(function(){
-    $('.dropdown-toggle').dropdown();
-});
+//= require bootstrap-sprockets

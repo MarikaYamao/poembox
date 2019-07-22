@@ -1,5 +1,5 @@
 <% if @type == 'LikePhoto' %>
-    $("#like-form-<%= @photo.id %>").html("<%= escape_javascript(render('favorites/unlike_button', type: @type, photo: @photo)) %>");
+    $("#like-form-photo-<%= @photo.id %>").html("<%= escape_javascript(render('favorites/unlike_button', type: @type, photo: @photo)) %>");
 <% elsif @type == 'LikePoem' %>
-    $("#like-form-<%= @poem.id %>").html("<%= escape_javascript(render('favorites/unlike_button', type: @type, poem: @poem)) %>");
+    $("#like-form-poem-<%= @poem.id %>").html("<%= escape_javascript(render('favorites/unlike_button', type: @type, poem: @poem)) %>");
 <% end %>
