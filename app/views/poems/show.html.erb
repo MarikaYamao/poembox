@@ -20,12 +20,12 @@
           <%= render 'favorites/like_button', type: 'LikePoem', poem: @poem %>
         <% end %>
       </div>
-      <a href="https://twitter.com/intent/tweet?text=<%= @poem.content.truncate(80) %>&url=<%= poem_url(@poem,:only_path => false) %>&hashtags=poembox&via=Poembox"
+      <a href="https://twitter.com/intent/tweet?text=<%= @poem.content.truncate(80) %>&url=<%= poem_url(@poem,:only_path => false) %>&hashtags=poembox,poem,詩&via=poembox__"
           target="_blank">
           <i class="fab fa-twitter"></i>
       </a>
     <% end %>
-    <span><%= @poem.created_at.strftime("%Y/%m/%d %H:%M") %></span>
+    <span class="date"><%= @poem.created_at.strftime("%Y/%m/%d %H:%M") %></span>
   </div>
   <div class="poem-container">
     <h3><%= @poem.title %></h3>

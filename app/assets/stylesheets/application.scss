@@ -304,6 +304,10 @@ textarea {
 
 /* --- コンテンツ --- */
 
+.box-container {
+  width: 100%;
+}
+
 .tab_content_description {
   .none-contents {
     margin: 30px 20px;
@@ -315,7 +319,7 @@ textarea {
 }
 
 .content-info {
-  span {
+  span.date {
     float: right;
     line-height: 20px;
     font-size: 12px;

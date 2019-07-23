@@ -20,12 +20,12 @@
           <%= render 'favorites/like_button', type: 'LikePhoto', photo: @photo %>
         <% end %>
       </div>
-      <a href="https://twitter.com/intent/tweet?text=&url=<%= photo_url(@photo,:only_path => false) %>&hashtags=poembox&via=Poembox"
+      <a href="https://twitter.com/intent/tweet?text=&url=<%= photo_url(@photo,:only_path => false) %>&hashtags=poembox,poem,photo,詩,写真&via=poembox__"
           target="_blank">
           <i class="fab fa-twitter"></i>
       </a>
     <% end %>
-    <span><%= @photo.created_at.strftime("%Y/%m/%d %H:%M") %></span>
+    <span class="date"><%= @photo.created_at.strftime("%Y/%m/%d %H:%M") %></span>
   </div>
   <%= render 'poems/photo' %>
 </div>
