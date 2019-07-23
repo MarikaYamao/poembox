@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   around_action :user_time_zone, if: :current_user
   #herokuapp.comから独自ドメインへリダイレクト
   before_action :ensure_domain
-  FQDN = 'www.koluku.net'
+  FQDN = 'www.poembox.net'
 
   include SessionsHelper
 
