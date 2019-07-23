@@ -7,7 +7,7 @@
 
 <div class="contents">
   <p><%= link_to image_tag(@photo.image_name), photo_path(@photo), class: 'img-responsive' %></p>
-  <div>
+  <div class="content-info">
     <% if current_user == @poem.user %>
       <%= link_to t('.delete'), @poem, method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger btn-xs' %>
       <%= link_to t('.edit'), edit_poem_path(@poem.id), class: 'btn btn-success btn-xs', remote: true %>
@@ -25,6 +25,7 @@
           <i class="fab fa-twitter"></i>
       </a>
     <% end %>
+    <span><%= @poem.created_at.strftime("%Y/%m/%d %H:%M") %></span>
   </div>
   <div class="poem-container">
     <h3><%= @poem.title %></h3>

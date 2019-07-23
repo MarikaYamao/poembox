@@ -87,7 +87,7 @@ textarea {
   border-color: #007bff;
 }
 
-.fab {
+.fab, .fas {
   font-size: 20px;
 }
 
@@ -311,6 +311,16 @@ textarea {
     .btn {
       padding: 20px 40px;
     }
+  }
+}
+
+.content-info {
+  span {
+    float: right;
+    line-height: 20px;
+    font-size: 12px;
+    margin-right: 20px;
+    cursor: default;
   }
 }
 
