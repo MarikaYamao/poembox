@@ -1,10 +1,13 @@
+<% set_meta_tags title: @poem.title.truncate(20), description: @poem.content.truncate(30), 
+                  og: { title: @poem.title, url: poem_url(@poem,:only_path => false), image: @photo.image_name.attachment.service.send(:object_for, @photo.image_name.key).public_url } %>
+
 <div class="user" >
   <%= render @poem.user %>
 </div>
 
 <div class="contents">
   <p><%= link_to image_tag(@photo.image_name), photo_path(@photo), class: 'img-responsive' %></p>
-  <div>
+  <div class="content-info">
     <% if current_user == @poem.user %>
       <%= link_to t('.delete'), @poem, method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger btn-xs' %>
       <%= link_to t('.edit'), edit_poem_path(@poem.id), class: 'btn btn-success btn-xs', remote: true %>
@@ -17,7 +20,12 @@
           <%= render 'favorites/like_button', type: 'LikePoem', poem: @poem %>
         <% end %>
       </div>
+      <a href="https://twitter.com/intent/tweet?text=<%= @poem.content.truncate(80) %>&url=<%= poem_url(@poem,:only_path => false) %>&hashtags=poembox,poem,詩&via=poembox__"
+          target="_blank">
+          <i class="fab fa-twitter"></i>
+      </a>
     <% end %>
+    <span class="date"><%= @poem.created_at.strftime("%Y/%m/%d %H:%M") %></span>
   </div>
   <div class="poem-container">
     <h3><%= @poem.title %></h3>

@@ -85,6 +85,9 @@ group :development do
   gem "binding_of_caller"
 end
 
+# メタが綺麗になるやつ
+gem 'meta-tags'
+
 # 国際化
 gem 'rails-i18n', '~> 5.1'
 

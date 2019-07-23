@@ -1,3 +1,11 @@
+<% if @user.image.attached? %>
+  <% set_meta_tags title: @user.name, description: @user.note, 
+                    og: { title: @user.name, url: user_url(@user,:only_path => false), image: @user.image.attachment.service.send(:object_for, @user.image.key).public_url } %>
+<% else %>
+  <% set_meta_tags title: @user.name, description: @user.note, 
+                  og: { title: @user.name, url: user_url(@user,:only_path => false), image: image_url('/user_default.png') } %>
+<% end %>
+
 <div class="user" >
   <%= render @user %>
 </div>

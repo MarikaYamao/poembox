@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@charset "utf-8";
 @import "bootstrap";
+@charset "utf-8";
 
 /* body */
 body {
@@ -89,6 +89,15 @@ textarea {
   background-color: #007bff;
   color: #fff;
   border-color: #007bff;
+}
+
+.fab, .fas {
+  font-size: 20px;
+}
+
+.like_form + a .fab {
+  vertical-align: middle;
+  margin-top: -3px;
 }
 
 @media (max-width: 480px) {
@@ -299,6 +308,10 @@ textarea {
 
 /* --- コンテンツ --- */
 
+.box-container {
+  width: 100%;
+}
+
 .tab_content_description {
   .none-contents {
     margin: 30px 20px;
@@ -306,6 +319,16 @@ textarea {
     .btn {
       padding: 20px 40px;
     }
+  }
+}
+
+.content-info {
+  span.date {
+    float: right;
+    line-height: 20px;
+    font-size: 12px;
+    margin-right: 20px;
+    cursor: default;
   }
 }
 

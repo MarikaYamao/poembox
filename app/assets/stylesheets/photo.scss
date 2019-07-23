@@ -45,13 +45,22 @@ p .img-responsive img:hover{
     width: auto;
   }
   
-  .like_form{
+  .icon_cover{
     position: absolute;
     bottom: 5px;
     right: 5px;
     
-    .btn .fas {
+    .fas {
       font-size: 20px;
+      vertical-align: middle;
+    }
+    
+    span {
+      height: 20px;
+      font-size: 12px;
+      float: inherit;
+      margin-left: 5px;
+      cursor: default;
     }
   }
 }
