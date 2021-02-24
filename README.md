@@ -1,4 +1,3 @@
-https://www.poembox.net/
 
 使用言語
 Ruby
